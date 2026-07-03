@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-:root{--c:#0F766E;--c-dark:#115E59;--c-light:#CCFBF1;--c-bg:#F0FDFA;--navy:#14344A;--green:#16A34A;--green-l:#DCFCE7;--red:#DC2626;--red-l:#FEE2E2;--blue:#2563EB;--blue-l:#DBEAFE;--yellow:#D97706;--yellow-l:#FEF3C7;--purple:#7C3AED;--purple-l:#EDE9FE;--orange:#EA580C;--orange-l:#FFEDD5;--font:'Plus Jakarta Sans',sans-serif;--r:18px;--sh:0 2px 12px rgba(15,45,45,.08)}
+:root{--c:#0F766E;--c-dark:#115E59;--c-light:#CCFBF1;--c-bg:#F0FDFA;--navy:#14344A;--green:#16A34A;--green-l:#DCFCE7;--red:#DC2626;--red-l:#FEE2E2;--blue:#2563EB;--blue-l:#DBEAFE;--yellow:#D97706;--yellow-l:#FEF3C7;--purple:#7C3AED;--purple-l:#EDE9FE;--orange:#EA580C;--orange-l:#FFEDD5;--gray:#64748B;--gray-l:#F1F5F9;--font:'Plus Jakarta Sans',sans-serif;--r:18px;--sh:0 2px 12px rgba(15,45,45,.08)}
 html,body{height:100%;background:#B9DDD6;font-family:var(--font);-webkit-font-smoothing:antialiased;color:#17313B}
 .phone-frame{background:#9bcac1;border-radius:48px;padding:12px;max-width:400px;width:100%;margin:24px auto;box-shadow:0 24px 64px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.25)}
 .screen{background:var(--c-bg);border-radius:38px;overflow:hidden;min-height:720px;max-height:88vh;display:flex;flex-direction:column;position:relative}
@@ -18,57 +18,77 @@ html,body{height:100%;background:#B9DDD6;font-family:var(--font);-webkit-font-sm
 .page{display:none;flex:1;flex-direction:column;overflow:hidden}.page.on{display:flex;animation:fadeUp .22s ease}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .scroll-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:82px}.scroll-body::-webkit-scrollbar,.form-body::-webkit-scrollbar{width:0}
 .bot-nav{position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #DDEDEA;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 0 12px;z-index:10}
-.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:none;background:transparent;padding:0}.nav-item i{font-size:21px;color:#9CADAA}.nav-item span{font-size:9px;font-weight:800;color:#9CADAA;letter-spacing:.25px;text-transform:uppercase}.nav-item.on i,.nav-item.on span{color:var(--c)}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:none;background:transparent;padding:0}.nav-item i{font-size:20px;color:#9CADAA}.nav-item span{font-size:8.5px;font-weight:800;color:#9CADAA;letter-spacing:.2px;text-transform:uppercase}.nav-item.on i,.nav-item.on span{color:var(--c)}
 .home-header{background:linear-gradient(135deg,var(--c) 0%,#0B6059 55%,#134E4A 100%);padding:22px 20px 40px;position:relative;overflow:hidden;flex-shrink:0}.home-header:before,.page-header:before{content:'';position:absolute;top:-48px;right:-42px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.08)}.home-header:after{content:'';position:absolute;bottom:-55px;left:18px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.05)}.home-header>*{position:relative;z-index:1}
-.hh-top{display:flex;justify-content:space-between;align-items:flex-start}.hh-greet{font-size:11px;font-weight:700;color:rgba(255,255,255,.72);letter-spacing:.65px;text-transform:uppercase;margin-bottom:3px}.hh-name{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.4px}.hh-notif{width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.16);border:none;color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer}.hh-kpi{display:flex;gap:9px;margin-top:16px}.hh-stat{background:rgba(255,255,255,.14);border-radius:14px;padding:10px;flex:1;backdrop-filter:blur(4px)}.hh-stat-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.45px;margin-bottom:4px}.hh-stat-val{font-size:16px;font-weight:900;color:#fff;letter-spacing:-.3px}
+.hh-top{display:flex;justify-content:space-between;align-items:flex-start}.hh-greet{font-size:11px;font-weight:700;color:rgba(255,255,255,.72);letter-spacing:.65px;text-transform:uppercase;margin-bottom:3px}.hh-name{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.4px}.hh-notif{width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.16);border:none;color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative}.hh-badge{position:absolute;top:-3px;right:-3px;background:var(--red);color:#fff;font-size:9px;font-weight:900;border-radius:8px;padding:1px 4px;min-width:15px}
+.hh-kpi{display:flex;gap:9px;margin-top:16px}.hh-stat{background:rgba(255,255,255,.14);border-radius:14px;padding:10px;flex:1;backdrop-filter:blur(4px)}.hh-stat-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.45px;margin-bottom:4px}.hh-stat-val{font-size:16px;font-weight:900;color:#fff;letter-spacing:-.3px}
 .home-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 14px;margin-top:-24px;margin-bottom:7px;position:relative;z-index:2}.action-btn{background:#fff;border-radius:16px;padding:12px 5px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;border:none;box-shadow:var(--sh)}.action-btn:active{transform:scale(.95)}.action-icon{width:39px;height:39px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px}.action-icon.green{background:var(--green-l);color:var(--green)}.action-icon.red{background:var(--red-l);color:var(--red)}.action-icon.blue{background:var(--blue-l);color:var(--blue)}.action-icon.yellow{background:var(--yellow-l);color:var(--yellow)}.action-icon.teal{background:var(--c-light);color:var(--c)}.action-label{font-size:9px;font-weight:800;color:#334155;text-align:center}
 .sec-title{font-size:10px;font-weight:800;color:#8A9B98;padding:13px 18px 7px;text-transform:uppercase;letter-spacing:.8px;display:flex;justify-content:space-between;align-items:center}.sec-title a{color:var(--c);font-size:11px;text-decoration:none;cursor:pointer;text-transform:none;letter-spacing:0}
 .card{background:#fff;border-radius:var(--r);box-shadow:var(--sh)}.agenda-item,.activity-item,.pipeline-item{display:flex;align-items:center;gap:12px;padding:12px 18px;cursor:pointer;border-bottom:1px solid #EEF5F3}.agenda-item:last-child,.activity-item:last-child,.pipeline-item:last-child{border-bottom:0}.agenda-item:active,.activity-item:active{background:#F7FBFA}.time-pill{width:48px;font-size:10px;font-weight:900;color:var(--c);text-align:center;background:var(--c-light);border-radius:10px;padding:7px 3px;flex-shrink:0}.item-icon{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}.item-icon.visit{background:var(--blue-l);color:var(--blue)}.item-icon.follow{background:var(--yellow-l);color:var(--yellow)}.item-icon.deal{background:var(--green-l);color:var(--green)}.item-icon.prospect{background:var(--purple-l);color:var(--purple)}.item-meta{flex:1;min-width:0}.item-title{font-size:13px;font-weight:800;color:#18333C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.item-sub{font-size:10px;font-weight:600;color:#8A9B98;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.status{font-size:9px;font-weight:800;padding:4px 7px;border-radius:8px;white-space:nowrap}.status.plan{background:var(--blue-l);color:var(--blue)}.status.done{background:var(--green-l);color:var(--green)}.status.follow{background:var(--yellow-l);color:var(--yellow)}.status.lost{background:var(--red-l);color:var(--red)}
-.insight-row{display:grid;grid-template-columns:1.2fr 1fr;gap:9px;padding:0 14px}.insight-card{background:#fff;border-radius:16px;padding:13px;box-shadow:var(--sh)}.insight-number{font-size:21px;font-weight:900;color:#18333C;letter-spacing:-.6px}.insight-label{font-size:9px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.45px;margin-top:3px}.progress{height:7px;background:#E8F1EF;border-radius:7px;overflow:hidden;margin-top:8px}.progress div{height:100%;border-radius:7px;background:var(--c)}
-.page-header{background:linear-gradient(135deg,var(--c),var(--c-dark));padding:18px 16px 21px;display:flex;align-items:center;gap:12px;position:relative;overflow:hidden;flex-shrink:0}.page-header.blue{background:linear-gradient(135deg,var(--blue),#1D4ED8)}.page-header.purple{background:linear-gradient(135deg,var(--purple),#6D28D9)}.page-header>*{position:relative;z-index:1}.back-btn,.page-action{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:17px;flex-shrink:0}.page-title{font-size:17px;font-weight:800;color:#fff;flex:1;letter-spacing:-.25px}
-.form-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px;padding-bottom:98px}.form-card{background:#fff;border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh);margin-bottom:10px}.form-label{font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px}.form-divider{height:1px;background:#EAF2F0;margin:10px 0}.form-card input,.form-card select,.form-card textarea{border:none;outline:none;width:100%;font-size:14px;font-weight:600;color:#18333C;background:transparent;font-family:var(--font)}.form-card textarea{resize:none;min-height:70px;line-height:1.5}.select-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.choice{background:#F3FBF9;border:2px solid transparent;border-radius:12px;padding:10px 7px;text-align:center;cursor:pointer}.choice i{display:block;font-size:20px;margin-bottom:4px;color:var(--c)}.choice span{display:block;font-size:10px;font-weight:800;color:#5D7270}.choice.on{border-color:var(--c);background:var(--c-light)}.choice.on span{color:#134E4A}.choice.danger.on{border-color:var(--red);background:var(--red-l)}.choice.danger.on i,.choice.danger.on span{color:var(--red)}
-.cta-bar{padding:12px 16px 16px;background:var(--c-bg);flex-shrink:0}.cta-main{width:100%;padding:15px;font-size:15px;font-weight:800;font-family:var(--font);border-radius:16px;border:none;background:linear-gradient(135deg,var(--c),var(--c-dark));color:#fff;cursor:pointer;box-shadow:0 4px 16px rgba(15,118,110,.28)}.cta-main:active{transform:scale(.99);opacity:.9}.cta-main.danger{background:linear-gradient(135deg,var(--red),#B91C1C)}
+.insight-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 14px}.insight-card{background:#fff;border-radius:16px;padding:13px;box-shadow:var(--sh)}.insight-number{font-size:21px;font-weight:900;color:#18333C;letter-spacing:-.6px}.insight-label{font-size:9px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.45px;margin-top:3px}.progress{height:7px;background:#E8F1EF;border-radius:7px;overflow:hidden;margin-top:8px}.progress div{height:100%;border-radius:7px;background:var(--c)}
+.page-header{background:linear-gradient(135deg,var(--c),var(--c-dark));padding:18px 16px 21px;display:flex;align-items:center;gap:12px;position:relative;overflow:hidden;flex-shrink:0}.page-header.blue{background:linear-gradient(135deg,var(--blue),#1D4ED8)}.page-header.purple{background:linear-gradient(135deg,var(--purple),#6D28D9)}.page-header.yellow{background:linear-gradient(135deg,#D97706,#92400E)}.page-header.orange{background:linear-gradient(135deg,#EA580C,#9A3412)}.page-header>*{position:relative;z-index:1}.back-btn,.page-action{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:17px;flex-shrink:0}.page-title{font-size:17px;font-weight:800;color:#fff;flex:1;letter-spacing:-.25px}
+.form-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px;padding-bottom:98px}.form-card{background:#fff;border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh);margin-bottom:10px}.form-label{font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px}.form-divider{height:1px;background:#EAF2F0;margin:10px 0}.form-card input,.form-card select,.form-card textarea{border:none;outline:none;width:100%;font-size:14px;font-weight:600;color:#18333C;background:transparent;font-family:var(--font)}.form-card textarea{resize:none;min-height:60px;line-height:1.5}.select-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.choice{background:#F3FBF9;border:2px solid transparent;border-radius:12px;padding:10px 7px;text-align:center;cursor:pointer}.choice i{display:block;font-size:20px;margin-bottom:4px;color:var(--c)}.choice span{display:block;font-size:10px;font-weight:800;color:#5D7270}.choice.on{border-color:var(--c);background:var(--c-light)}.choice.on span{color:#134E4A}.choice.danger.on{border-color:var(--red);background:var(--red-l)}.choice.danger.on i,.choice.danger.on span{color:var(--red)}
+.cta-bar{padding:12px 16px 16px;background:var(--c-bg);flex-shrink:0}.cta-main{width:100%;padding:15px;font-size:15px;font-weight:800;font-family:var(--font);border-radius:16px;border:none;background:linear-gradient(135deg,var(--c),var(--c-dark));color:#fff;cursor:pointer;box-shadow:0 4px 16px rgba(15,118,110,.28)}.cta-main:active{transform:scale(.99);opacity:.9}.cta-main.danger{background:linear-gradient(135deg,var(--red),#B91C1C)}.cta-main.ghost{background:#fff;color:var(--c);border:2px solid var(--c-light);box-shadow:none}.cta-main.wa{background:linear-gradient(135deg,#25D366,#128C4A)}
 .chip-filter{display:flex;gap:6px;overflow-x:auto;padding:10px 14px 4px;flex-shrink:0}.chip-filter::-webkit-scrollbar{display:none}.chip{padding:7px 13px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer;border:none;font-family:var(--font);background:#fff;color:#8A9B98;box-shadow:var(--sh)}.chip.on{background:var(--c);color:#fff}
-.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:11px 14px 4px}.stat-card{background:#fff;border-radius:14px;padding:12px;text-align:center;box-shadow:var(--sh)}.stat-val{font-size:15px;font-weight:900;letter-spacing:-.4px}.stat-label{font-size:8px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.35px;margin-top:4px}
-.pipeline-wrap{padding:0 14px}.pipeline-card{background:#fff;border-radius:17px;box-shadow:var(--sh);margin-bottom:9px;padding:13px}.pipeline-top{display:flex;align-items:center;gap:10px}.company-avatar{width:40px;height:40px;border-radius:13px;background:var(--purple-l);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}.pipeline-info{flex:1;min-width:0}.pipeline-name{font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pipeline-sub{font-size:10px;font-weight:600;color:#8A9B98;margin-top:2px}.pipeline-value{font-size:12px;font-weight:900;color:var(--c);margin-top:2px}.pipeline-footer{display:flex;align-items:center;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid #EDF4F2}.small-date{font-size:10px;font-weight:700;color:#8A9B98}
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:11px 14px 4px}.stat-strip.four{grid-template-columns:repeat(4,1fr)}.stat-card{background:#fff;border-radius:14px;padding:12px 6px;text-align:center;box-shadow:var(--sh)}.stat-val{font-size:14px;font-weight:900;letter-spacing:-.4px}.stat-label{font-size:7.5px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.3px;margin-top:4px}
+.pipeline-wrap{padding:0 14px}.pipeline-card{background:#fff;border-radius:17px;box-shadow:var(--sh);margin-bottom:9px;padding:13px;cursor:pointer}.pipeline-top{display:flex;align-items:center;gap:10px}.company-avatar{width:40px;height:40px;border-radius:13px;background:var(--purple-l);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;font-weight:800}.pipeline-info{flex:1;min-width:0}.pipeline-name{font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pipeline-sub{font-size:10px;font-weight:600;color:#8A9B98;margin-top:2px}.pipeline-value{font-size:12px;font-weight:900;color:var(--c);margin-top:2px}.pipeline-footer{display:flex;align-items:center;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid #EDF4F2}.small-date{font-size:10px;font-weight:700;color:#8A9B98;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kanban{display:flex;gap:10px;overflow-x:auto;padding:4px 14px 16px;-webkit-overflow-scrolling:touch}.kanban::-webkit-scrollbar{display:none}.kcol{min-width:172px;background:#fff;border-radius:16px;box-shadow:var(--sh);padding:11px;flex-shrink:0}.kcol h4{font-size:10.5px;font-weight:900;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px}.kcard{background:#F5FBFA;border:1px solid #E3F1EE;border-radius:12px;padding:9px;margin-top:7px;cursor:pointer}.kcard b{font-size:11.5px;display:block}.kcard small{display:block;color:#8A9B98;font-size:9.5px;margin-top:3px;line-height:1.4}
 .chart-card{background:#fff;border-radius:17px;margin:0 14px 10px;padding:14px;box-shadow:var(--sh)}.chart-title{font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px}.bar-chart{height:128px;display:flex;align-items:flex-end;justify-content:space-between;gap:8px;padding:0 3px}.bar-col{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}.bar{width:100%;max-width:24px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#2DD4BF,var(--c))}.bar-label{font-size:9px;font-weight:800;color:#8A9B98}.legend{display:flex;align-items:center;gap:14px;margin-top:12px;font-size:10px;font-weight:700;color:#6C7E7B}.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}.dot.teal{background:var(--c)}.dot.orange{background:var(--orange)}
-.profile-card{text-align:center;padding:20px}.profile-avatar{width:70px;height:70px;border-radius:20px;background:var(--c-light);color:var(--c);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 9px}.profile-name{font-size:18px;font-weight:900}.profile-role{font-size:11px;font-weight:700;color:#8A9B98;margin-top:4px}.profile-section{background:#fff;border-radius:var(--r);padding:5px 14px;box-shadow:var(--sh);margin-bottom:10px}.profile-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #EAF2F0;cursor:pointer}.profile-row:last-child{border-bottom:0}.profile-left{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}.profile-icon{width:32px;height:32px;border-radius:10px;background:var(--c-light);color:var(--c);display:flex;align-items:center;justify-content:center;font-size:16px}.modal-overlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:flex-end}.modal-overlay.show{display:flex;animation:fadeUp .2s ease}.modal-box{background:#fff;border-radius:28px 28px 0 0;padding:22px 20px 32px;width:100%;max-height:84%;overflow-y:auto}.modal-handle{width:36px;height:4px;background:#E5E7EB;border-radius:5px;margin:0 auto 16px}.modal-title{font-size:18px;font-weight:900;margin-bottom:12px}.toast{position:absolute;bottom:90px;left:50%;transform:translateX(-50%) translateY(10px);background:#163238;color:#fff;padding:10px 17px;border-radius:20px;font-size:12px;font-weight:800;white-space:nowrap;z-index:200;opacity:0;pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.empty{padding:32px 20px;text-align:center;color:#8A9B98}.empty i{font-size:34px;display:block;margin-bottom:6px}.empty p{font-size:12px;font-weight:700}
+.profile-card{text-align:center;padding:20px}.profile-avatar{width:70px;height:70px;border-radius:20px;background:var(--c-light);color:var(--c);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 9px}.profile-name{font-size:18px;font-weight:900}.profile-role{font-size:11px;font-weight:700;color:#8A9B98;margin-top:4px}.profile-section{background:#fff;border-radius:var(--r);padding:5px 14px;box-shadow:var(--sh);margin-bottom:10px}.profile-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #EAF2F0;cursor:pointer}.profile-row:last-child{border-bottom:0}.profile-left{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}.profile-icon{width:32px;height:32px;border-radius:10px;background:var(--c-light);color:var(--c);display:flex;align-items:center;justify-content:center;font-size:16px}.modal-overlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:flex-end}.modal-overlay.show{display:flex;animation:fadeUp .2s ease}.modal-box{background:#fff;border-radius:28px 28px 0 0;padding:22px 20px 32px;width:100%;max-height:84%;overflow-y:auto}.modal-handle{width:36px;height:4px;background:#E5E7EB;border-radius:5px;margin:0 auto 16px}.modal-title{font-size:18px;font-weight:900;margin-bottom:12px}.toast{position:absolute;bottom:90px;left:50%;transform:translateX(-50%) translateY(10px);background:#163238;color:#fff;padding:10px 17px;border-radius:20px;font-size:12px;font-weight:800;white-space:nowrap;z-index:200;opacity:0;pointer-events:none;transition:.25s;max-width:88%;text-align:center;white-space:normal}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.empty{padding:32px 20px;text-align:center;color:#8A9B98}.empty i{font-size:34px;display:block;margin-bottom:6px}.empty p{font-size:12px;font-weight:700}
+.tag{display:inline-block;border-radius:9px;padding:4px 8px;font-size:9px;font-weight:900;margin:0 5px 5px 0}.tag.green{background:var(--green-l);color:#166534}.tag.yellow{background:var(--yellow-l);color:#92400E}.tag.red{background:var(--red-l);color:#B91C1C}.tag.blue{background:var(--blue-l);color:#1D4ED8}.tag.purple{background:var(--purple-l);color:#6D28D9}.tag.gray{background:var(--gray-l);color:#475569}.tag.orange{background:var(--orange-l);color:#9A3412}.tag.teal{background:var(--c-light);color:var(--c-dark)}
+.gauge{margin-top:11px}.gauge-row{display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin:9px 0 5px}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:9px}.cday{background:#F5FBFA;border-radius:11px;text-align:center;padding:8px 2px;font-weight:900;font-size:11px}.cday small{display:block;color:#8A9B98;font-size:8px;font-weight:800}.cday.on{background:var(--c-light);color:var(--c-dark)}.cday.best{background:var(--green-l);color:#166534}
+.badge-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.badge-box{background:#F8FAFC;border:1px solid #E2ECE9;border-radius:14px;padding:10px;opacity:.45}.badge-box.unlocked{opacity:1;border-color:var(--c-light);background:var(--c-light)}.badge-box b{display:block;font-size:11.5px}.badge-box small{display:block;color:#8A9B98;line-height:1.35;margin-top:4px;font-size:9.5px}
+.level-card{background:linear-gradient(135deg,var(--c),var(--c-dark));border-radius:var(--r);padding:18px;color:#fff;box-shadow:var(--sh)}.level-card .lv-label{font-size:10px;font-weight:800;opacity:.75;text-transform:uppercase;letter-spacing:.6px}.level-card .lv-name{font-size:19px;font-weight:900;margin-top:3px}.level-card .lv-bar{height:8px;background:rgba(255,255,255,.25);border-radius:8px;overflow:hidden;margin-top:12px}.level-card .lv-bar div{height:100%;background:#fff;border-radius:8px}.level-card .lv-sub{font-size:10.5px;font-weight:700;opacity:.85;margin-top:7px}
+.wa-fab{position:absolute;bottom:16px;right:16px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C4A);color:#fff;border:none;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(18,140,74,.4);cursor:pointer;z-index:5}
+.section-note{padding:0 14px 8px;font-size:11px;font-weight:600;color:#5D7270;line-height:1.5}
 </style>
 </head>
 <body>
 <div class="phone-frame"><div class="screen">
 
+<!-- HOME -->
 <div class="page on" id="pg-home">
   <div class="home-header">
-    <div class="hh-top"><div><div class="hh-greet" id="greet">Daily CRM Activity</div><div class="hh-name">Halo, Farid 👋</div></div><button class="hh-notif" onclick="goPage('pg-profile')"><i class="ti ti-user-circle"></i></button></div>
-    <div class="hh-kpi"><div class="hh-stat"><div class="hh-stat-label">Target Visit</div><div class="hh-stat-val" id="kpi-visit">0/0</div></div><div class="hh-stat"><div class="hh-stat-label">Deal Hari Ini</div><div class="hh-stat-val" id="kpi-deal">0</div></div><div class="hh-stat"><div class="hh-stat-label">Pipeline</div><div class="hh-stat-val" id="kpi-pipeline">Rp 0</div></div></div>
+    <div class="hh-top"><div><div class="hh-greet" id="greet">Daily CRM Activity</div><div class="hh-name">Halo, Farid 👋</div></div><button class="hh-notif" onclick="goPage('pg-followup')"><i class="ti ti-bell"></i><span class="hh-badge" id="notif-count">0</span></button></div>
+    <div class="hh-kpi"><div class="hh-stat"><div class="hh-stat-label">Target Visit</div><div class="hh-stat-val" id="kpi-visit">0/0</div></div><div class="hh-stat"><div class="hh-stat-label">Deal Bulan Ini</div><div class="hh-stat-val" id="kpi-deal">0</div></div><div class="hh-stat"><div class="hh-stat-label">Pipeline</div><div class="hh-stat-val" id="kpi-pipeline">Rp 0</div></div></div>
   </div>
   <div class="home-actions">
     <button class="action-btn" onclick="openActivityForm('visit')"><div class="action-icon blue"><i class="ti ti-map-pin"></i></div><div class="action-label">Rencana<br>Visit</div></button>
     <button class="action-btn" onclick="openActivityForm('followup')"><div class="action-icon yellow"><i class="ti ti-phone-call"></i></div><div class="action-label">Follow Up</div></button>
     <button class="action-btn" onclick="goPage('pg-prospects')"><div class="action-icon green"><i class="ti ti-building-store"></i></div><div class="action-label">Prospek</div></button>
-    <button class="action-btn" onclick="goPage('pg-report')"><div class="action-icon teal"><i class="ti ti-chart-bar"></i></div><div class="action-label">Laporan</div></button>
+    <button class="action-btn" onclick="goPage('pg-target')"><div class="action-icon teal"><i class="ti ti-trophy"></i></div><div class="action-label">Target</div></button>
   </div>
   <div class="scroll-body">
     <div class="insight-row"><div class="insight-card"><div class="insight-number" id="today-progress">0%</div><div class="insight-label">Progress Hari Ini</div><div class="progress"><div id="progress-bar" style="width:0%"></div></div></div><div class="insight-card"><div class="insight-number" id="overdue-count">0</div><div class="insight-label">Follow-up Terlewat</div><div style="font-size:10px;font-weight:700;color:var(--red);margin-top:8px" id="overdue-note">Aman</div></div></div>
-    <div class="sec-title">Agenda Hari Ini <a onclick="goPage('pg-activities')">Semua</a></div>
+    <div class="sec-title">Prioritas Hari Ini <a onclick="goPage('pg-followup')">Follow-up</a></div>
     <div class="card" style="margin:0 14px" id="agenda-list"></div>
-    <div class="sec-title">Aktivitas Terbaru <a onclick="goPage('pg-activities')">Lihat</a></div>
+    <div class="sec-title">Aktivitas Terbaru <a onclick="goPage('pg-activities')">Semua</a></div>
     <div class="card" style="margin:0 14px" id="recent-list"></div>
+    <div class="sec-title">Ringkasan Pipeline <a onclick="goPage('pg-prospects')">Lihat</a></div>
+    <div class="chart-card" id="mini-report"></div>
   </div>
-  <div class="bot-nav"><button class="nav-item on" onclick="setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="openActivityForm('visit')"><i class="ti ti-calendar-plus"></i><span>Aktivitas</span></button><button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item" onclick="goPage('pg-report');setNav('pg-report',this)"><i class="ti ti-chart-bar"></i><span>Laporan</span></button><button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
+  <div class="bot-nav">
+    <button class="nav-item on" onclick="setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button>
+    <button class="nav-item" onclick="goPage('pg-followup');setNav('pg-followup',this)"><i class="ti ti-clock-bolt"></i><span>Follow-up</span></button>
+    <button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button>
+    <button class="nav-item" onclick="goPage('pg-target');setNav('pg-target',this)"><i class="ti ti-trophy"></i><span>Target</span></button>
+    <button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button>
+  </div>
 </div>
 
+<!-- ACTIVITIES -->
 <div class="page" id="pg-activities">
   <div class="page-header"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Aktivitas Sales</div><button class="page-action" onclick="openActivityForm('visit')"><i class="ti ti-plus"></i></button></div>
-  <div class="chip-filter"><button class="chip on" onclick="setActivityFilter('all',this)">Semua</button><button class="chip" onclick="setActivityFilter('visit',this)">Visit</button><button class="chip" onclick="setActivityFilter('followup',this)">Follow-up</button><button class="chip" onclick="setActivityFilter('done',this)">Selesai</button></div>
+  <div class="chip-filter"><button class="chip on" onclick="setActivityFilter('all',this)">Semua</button><button class="chip" onclick="setActivityFilter('visit',this)">Visit</button><button class="chip" onclick="setActivityFilter('followup',this)">Follow-up</button><button class="chip" onclick="setActivityFilter('done',this)">Selesai</button><button class="chip" onclick="setActivityFilter('overdue',this)">Overdue</button></div>
   <div class="scroll-body" id="activity-list" style="padding-top:5px"></div>
 </div>
 
+<!-- ACTIVITY FORM -->
 <div class="page" id="pg-form">
   <div class="page-header"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title" id="form-title">Tambah Aktivitas</div></div>
   <div class="form-body">
-    <div class="form-card"><div class="form-label">Jenis Aktivitas</div><div class="select-grid"><div class="choice on" data-type="visit" onclick="selectType('visit',this)"><i class="ti ti-map-pin"></i><span>Visit</span></div><div class="choice" data-type="followup" onclick="selectType('followup',this)"><i class="ti ti-phone-call"></i><span>Follow-up</span></div><div class="choice" data-type="deal" onclick="selectType('deal',this)"><i class="ti ti-handshake"></i><span>Deal</span></div></div><input type="hidden" id="activity-type" value="visit"></div>
+    <div class="form-card"><div class="form-label">Jenis Aktivitas</div><div class="select-grid"><div class="choice on" data-type="visit" onclick="selectType('visit',this)"><i class="ti ti-map-pin"></i><span>Visit</span></div><div class="choice" data-type="followup" onclick="selectType('followup',this)"><i class="ti ti-phone-call"></i><span>Follow-up</span></div><div class="choice" data-type="proposal" onclick="selectType('proposal',this)"><i class="ti ti-file-text"></i><span>Proposal</span></div></div><div class="select-grid" style="margin-top:8px"><div class="choice" data-type="deal" onclick="selectType('deal',this)"><i class="ti ti-handshake"></i><span>Deal</span></div><div class="choice" data-type="repeat" onclick="selectType('repeat',this)"><i class="ti ti-repeat"></i><span>Repeat</span></div></div><input type="hidden" id="activity-type" value="visit"></div>
     <div class="form-card"><div class="form-label">Pelanggan / Prospek</div><select id="activity-prospect"></select><div class="form-divider"></div><div class="form-label">Tujuan Aktivitas</div><input id="activity-title" placeholder="Contoh: Follow-up penawaran mesin baru"></div>
     <div class="form-card"><div class="form-label">Jadwal</div><input type="date" id="activity-date"><div class="form-divider"></div><div class="form-label">Jam</div><input type="time" id="activity-time"></div>
     <div class="form-card"><div class="form-label">Catatan / Rencana Pembicaraan</div><textarea id="activity-note" placeholder="Tuliskan konteks pelanggan, kebutuhan, target, atau next action..."></textarea></div>
@@ -77,75 +97,443 @@ html,body{height:100%;background:#B9DDD6;font-family:var(--font);-webkit-font-sm
   <div class="cta-bar"><button class="cta-main" onclick="saveActivity()">Simpan Aktivitas</button></div>
 </div>
 
+<!-- ACTIVITY DETAIL -->
 <div class="page" id="pg-detail">
   <div class="page-header blue"><button class="back-btn" onclick="goBack('pg-activities')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Detail Aktivitas</div><button class="page-action" onclick="editCurrentActivity()"><i class="ti ti-edit"></i></button></div>
   <div class="scroll-body" style="padding:14px" id="detail-body"></div>
 </div>
 
+<!-- PROSPECTS / PIPELINE -->
 <div class="page" id="pg-prospects">
   <div class="page-header purple"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Pipeline Prospek</div><button class="page-action" onclick="openProspectForm()"><i class="ti ti-plus"></i></button></div>
   <div class="stat-strip"><div class="stat-card"><div class="stat-val" id="prospect-total">0</div><div class="stat-label">Prospek</div></div><div class="stat-card"><div class="stat-val" id="prospect-hot" style="color:var(--red)">0</div><div class="stat-label">Hot</div></div><div class="stat-card"><div class="stat-val" id="prospect-value" style="color:var(--c)">Rp 0</div><div class="stat-label">Potensi</div></div></div>
-  <div class="chip-filter"><button class="chip on" onclick="setProspectFilter('all',this)">Semua</button><button class="chip" onclick="setProspectFilter('hot',this)">🔥 Hot</button><button class="chip" onclick="setProspectFilter('proposal',this)">Proposal</button><button class="chip" onclick="setProspectFilter('deal',this)">Deal</button></div>
-  <div class="scroll-body" id="prospect-list" style="padding-top:4px"></div>
-  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="openActivityForm('visit')"><i class="ti ti-calendar-plus"></i><span>Aktivitas</span></button><button class="nav-item on" onclick="setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item" onclick="goPage('pg-report');setNav('pg-report',this)"><i class="ti ti-chart-bar"></i><span>Laporan</span></button><button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
+  <div class="chip-filter"><button class="chip on" onclick="setPipelineView('board',this)">Papan Pipeline</button><button class="chip" onclick="setPipelineView('list',this)">Daftar</button></div>
+  <div class="scroll-body" id="pipeline-view" style="padding-top:2px"></div>
+  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="goPage('pg-followup');setNav('pg-followup',this)"><i class="ti ti-clock-bolt"></i><span>Follow-up</span></button><button class="nav-item on" onclick="setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item" onclick="goPage('pg-target');setNav('pg-target',this)"><i class="ti ti-trophy"></i><span>Target</span></button><button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
 </div>
 
+<!-- PROSPECT DETAIL -->
+<div class="page" id="pg-prospect-detail">
+  <div class="page-header purple"><button class="back-btn" onclick="goBack('pg-prospects')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Profil Prospek</div><button class="page-action" onclick="editCurrentProspect()"><i class="ti ti-edit"></i></button></div>
+  <div class="scroll-body" style="padding:14px" id="prospect-detail-body"></div>
+  <button class="wa-fab" id="wa-fab" onclick="openWaTemplates()"><i class="ti ti-brand-whatsapp"></i></button>
+</div>
+
+<!-- PROSPECT FORM -->
+<div class="page" id="pg-prospect-form">
+  <div class="page-header purple"><button class="back-btn" onclick="goBack('pg-prospects')"><i class="ti ti-arrow-left"></i></button><div class="page-title" id="pf-title">Tambah Prospek</div></div>
+  <div class="form-body">
+    <div class="form-card"><div class="form-label">Nama Perusahaan / Toko</div><input id="pf-name" placeholder="Contoh: PT Makmur Abadi"><div class="form-divider"></div><div class="form-label">Nama PIC</div><input id="pf-pic" placeholder="Contoh: Pak Budi (Owner)"><div class="form-divider"></div><div class="form-label">No. WhatsApp PIC</div><input id="pf-phone" placeholder="Contoh: 6281234567890"></div>
+    <div class="form-card"><div class="form-label">Lokasi</div><input id="pf-location" placeholder="Contoh: Bandung, Jawa Barat"><div class="form-divider"></div><div class="form-label">Kategori Bisnis</div><input id="pf-category" placeholder="Contoh: Retail, Manufaktur, F&B"></div>
+    <div class="form-card"><div class="form-label">Nilai Potensi (Rp)</div><input type="number" id="pf-value" placeholder="0"><div class="form-divider"></div><div class="form-label">Produk Diminati</div><input id="pf-products" placeholder="Contoh: Paket A + instalasi"></div>
+    <div class="form-card"><div class="form-label">Tahap Pipeline</div><select id="pf-stage"></select></div>
+    <div class="form-card"><div class="form-label">Catatan Kebutuhan</div><textarea id="pf-notes" placeholder="Kebutuhan, konteks, budget..."></textarea><div class="form-divider"></div><div class="form-label">Risiko / Alasan Lost (opsional)</div><textarea id="pf-risk" placeholder="Isi bila stage Lost atau ada risiko churn"></textarea></div>
+    <input type="hidden" id="pf-id">
+  </div>
+  <div class="cta-bar"><button class="cta-main" onclick="saveProspectForm()">Simpan Prospek</button></div>
+</div>
+
+<!-- FOLLOW-UP / ANTI LUPA -->
+<div class="page" id="pg-followup">
+  <div class="page-header yellow"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Follow-up & Anti Lupa</div></div>
+  <div class="stat-strip four"><div class="stat-card"><div class="stat-val" style="color:var(--yellow)" id="fu-today">0</div><div class="stat-label">Hari Ini</div></div><div class="stat-card"><div class="stat-val" style="color:var(--red)" id="fu-overdue">0</div><div class="stat-label">Overdue</div></div><div class="stat-card"><div class="stat-val" style="color:var(--blue)" id="fu-cold">0</div><div class="stat-label">Dingin</div></div><div class="stat-card"><div class="stat-val" style="color:var(--green)" id="fu-hot">0</div><div class="stat-label">Peluang Hot</div></div></div>
+  <div class="scroll-body" style="padding-top:4px">
+    <div class="sec-title">Prioritas Follow-up Hari Ini</div>
+    <div class="card" style="margin:0 14px" id="fu-priority-list"></div>
+    <div class="sec-title">Terlewat (Overdue)</div>
+    <div class="card" style="margin:0 14px" id="fu-overdue-list"></div>
+    <div class="sec-title">Customer Mulai Dingin</div>
+    <div class="section-note">Belum dihubungi lebih dari 14 hari dan belum closing/lost.</div>
+    <div class="card" style="margin:0 14px" id="fu-cold-list"></div>
+    <div class="sec-title">Peluang Hot (Prioritas Nilai Besar)</div>
+    <div class="card" style="margin:0 14px" id="fu-hot-list"></div>
+  </div>
+  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item on" onclick="setNav('pg-followup',this)"><i class="ti ti-clock-bolt"></i><span>Follow-up</span></button><button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item" onclick="goPage('pg-target');setNav('pg-target',this)"><i class="ti ti-trophy"></i><span>Target</span></button><button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
+</div>
+
+<!-- TARGET / KPI / GAMIFIKASI -->
+<div class="page" id="pg-target">
+  <div class="page-header orange"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Target, KPI & Gamifikasi</div></div>
+  <div class="scroll-body" style="padding-top:12px">
+    <div style="padding:0 14px"><div class="level-card"><div class="lv-label">Level Sales</div><div class="lv-name" id="lv-name">—</div><div class="lv-bar"><div id="lv-bar" style="width:0%"></div></div><div class="lv-sub" id="lv-sub">0 poin</div></div></div>
+    <div class="sec-title">Progress Target Bulanan</div>
+    <div class="card" style="margin:0 14px;padding:14px" id="target-gauges"></div>
+    <div class="sec-title">KPI Penggerak Harian</div>
+    <div class="stat-strip four" id="kpi-daily"></div>
+    <div class="sec-title">Kalender Produktivitas (7 Hari)</div>
+    <div class="card" style="margin:0 14px;padding:13px"><div class="calendar-grid" id="prod-calendar"></div><div style="display:flex;gap:12px;margin-top:10px;font-size:9.5px;font-weight:700;color:#8A9B98"><span><i class="ti ti-square-rounded-filled" style="color:var(--green)"></i> Target tercapai</span><span><i class="ti ti-square-rounded-filled" style="color:var(--c)"></i> Ada aktivitas</span></div></div>
+    <div class="sec-title">Badge Pencapaian</div>
+    <div class="card" style="margin:0 14px;padding:13px"><div class="badge-grid" id="badge-list"></div></div>
+    <div class="sec-title">Leaderboard Personal</div>
+    <div class="card" style="margin:0 14px;padding:13px" id="leaderboard"></div>
+    <div class="sec-title">Aturan Poin</div>
+    <div class="card" style="margin:0 14px 16px;padding:13px"><p class="muted" style="font-size:11.5px;line-height:1.6;color:#5D7270">Visit selesai <b>+20</b> poin · Follow-up selesai <b>+10</b> poin · Proposal terkirim <b>+50</b> poin · Deal closing <b>+250</b> poin · Repeat Order <b>+150</b> poin. Poin dihitung otomatis dari aktivitas yang ditandai selesai.</p></div>
+  </div>
+  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="goPage('pg-followup');setNav('pg-followup',this)"><i class="ti ti-clock-bolt"></i><span>Follow-up</span></button><button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item on" onclick="setNav('pg-target',this)"><i class="ti ti-trophy"></i><span>Target</span></button><button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
+</div>
+
+<!-- REPORT -->
 <div class="page" id="pg-report">
   <div class="page-header"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Laporan Aktivitas</div></div>
   <div class="scroll-body" style="padding-top:10px">
     <div class="stat-strip"><div class="stat-card"><div class="stat-val" id="report-visits">0</div><div class="stat-label">Visit</div></div><div class="stat-card"><div class="stat-val" id="report-follow">0</div><div class="stat-label">Follow-up</div></div><div class="stat-card"><div class="stat-val" id="report-deals">0</div><div class="stat-label">Deal</div></div></div>
-    <div class="chart-card"><div class="chart-title">Aktivitas 7 Hari Terakhir</div><div class="bar-chart" id="bar-chart"></div><div class="legend"><span><i class="dot teal"></i>Aktivitas tercatat</span><span><i class="dot orange" style="background:var(--orange)"></i>Target harian</span></div></div>
-    <div class="sec-title">Konversi Pipeline</div><div class="chart-card"><div id="conversion-list"></div></div>
+    <div class="chart-card"><div class="chart-title">Aktivitas 7 Hari Terakhir</div><div class="bar-chart" id="bar-chart"></div><div class="legend"><span><i class="dot teal"></i>Aktivitas tercatat</span><span><i class="dot orange"></i>Target harian</span></div></div>
+    <div class="sec-title">Konversi Pipeline</div><div class="chart-card" id="conversion-list"></div>
     <div class="sec-title">Ringkasan Minggu Ini</div><div class="chart-card" id="weekly-summary"></div>
   </div>
-  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="openActivityForm('visit')"><i class="ti ti-calendar-plus"></i><span>Aktivitas</span></button><button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item on" onclick="setNav('pg-report',this)"><i class="ti ti-chart-bar"></i><span>Laporan</span></button><button class="nav-item" onclick="goPage('pg-profile');setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
 </div>
 
+<!-- PROFILE -->
 <div class="page" id="pg-profile">
   <div class="page-header"><button class="back-btn" onclick="goBack('pg-home')"><i class="ti ti-arrow-left"></i></button><div class="page-title">Profil</div></div>
   <div class="scroll-body" style="padding:14px">
     <div class="card profile-card"><div class="profile-avatar">FA</div><div class="profile-name" id="profile-name">Farid Adam</div><div class="profile-role">Sales & Activity Management</div></div>
-    <div class="profile-section"><div class="profile-row" onclick="openProfileEdit()"><div class="profile-left"><div class="profile-icon"><i class="ti ti-edit"></i></div>Edit Profil</div><i class="ti ti-chevron-right"></i></div><div class="profile-row" onclick="openTargetSetting()"><div class="profile-left"><div class="profile-icon"><i class="ti ti-target-arrow"></i></div>Target Harian</div><span id="target-display" style="font-size:11px;font-weight:800;color:var(--c)">0 Visit</span></div><div class="profile-row" onclick="exportSummary()"><div class="profile-left"><div class="profile-icon"><i class="ti ti-share"></i></div>Ekspor Ringkasan</div><i class="ti ti-chevron-right"></i></div></div>
+    <div class="profile-section"><div class="profile-row" onclick="openProfileEdit()"><div class="profile-left"><div class="profile-icon"><i class="ti ti-edit"></i></div>Edit Profil</div><i class="ti ti-chevron-right"></i></div><div class="profile-row" onclick="openTargetSetting()"><div class="profile-left"><div class="profile-icon"><i class="ti ti-target-arrow"></i></div>Target Bulanan</div><i class="ti ti-chevron-right"></i></div><div class="profile-row" onclick="goPage('pg-report')"><div class="profile-left"><div class="profile-icon"><i class="ti ti-chart-bar"></i></div>Laporan Lengkap</div><i class="ti ti-chevron-right"></i></div><div class="profile-row" onclick="exportSummary()"><div class="profile-left"><div class="profile-icon"><i class="ti ti-share"></i></div>Ekspor Ringkasan</div><i class="ti ti-chevron-right"></i></div></div>
     <div class="profile-section"><div class="profile-row" onclick="resetDemo()"><div class="profile-left" style="color:var(--red)"><div class="profile-icon" style="background:var(--red-l);color:var(--red)"><i class="ti ti-refresh"></i></div>Reset Data Demo</div><i class="ti ti-chevron-right"></i></div></div>
-    <div style="text-align:center;padding:14px;font-size:10px;font-weight:700;color:#8A9B98">ActivityCRM v1.0 · Rencanakan, jalankan, evaluasi.</div>
+    <div style="text-align:center;padding:14px;font-size:10px;font-weight:700;color:#8A9B98">ActivityCRM v5.0 · Rencanakan, jalankan, evaluasi.</div>
   </div>
-  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="openActivityForm('visit')"><i class="ti ti-calendar-plus"></i><span>Aktivitas</span></button><button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item" onclick="goPage('pg-report');setNav('pg-report',this)"><i class="ti ti-chart-bar"></i><span>Laporan</span></button><button class="nav-item on" onclick="setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
+  <div class="bot-nav"><button class="nav-item" onclick="goPage('pg-home');setNav('pg-home',this)"><i class="ti ti-home"></i><span>Beranda</span></button><button class="nav-item" onclick="goPage('pg-followup');setNav('pg-followup',this)"><i class="ti ti-clock-bolt"></i><span>Follow-up</span></button><button class="nav-item" onclick="goPage('pg-prospects');setNav('pg-prospects',this)"><i class="ti ti-building-store"></i><span>Prospek</span></button><button class="nav-item" onclick="goPage('pg-target');setNav('pg-target',this)"><i class="ti ti-trophy"></i><span>Target</span></button><button class="nav-item on" onclick="setNav('pg-profile',this)"><i class="ti ti-user"></i><span>Profil</span></button></div>
 </div>
 
 <div class="modal-overlay" id="modal" onclick="closeModal()"><div class="modal-box" onclick="event.stopPropagation()"><div class="modal-handle"></div><div id="modal-content"></div></div></div><div class="toast" id="toast"></div>
 </div></div>
 <script>
-const KEY='activitycrm_v1';
-let DB, stack=[], activityFilter='all', prospectFilter='all', currentDetail=null;
+const KEY='activitycrm_v5';
+let DB, stack=[], activityFilter='all', pipelineView='board', currentDetail=null, currentProspect=null;
+const STAGES=[
+ {id:'new',label:'Prospek Baru',color:'blue'},
+ {id:'qualified',label:'Qualified',color:'purple'},
+ {id:'meeting',label:'Meeting',color:'yellow'},
+ {id:'proposal',label:'Proposal',color:'orange'},
+ {id:'negotiation',label:'Negosiasi',color:'red'},
+ {id:'deal',label:'Deal',color:'green'},
+ {id:'lost',label:'Lost',color:'gray'},
+ {id:'repeat',label:'Repeat Order',color:'teal'}
+];
+const POINTS={visit:20,followup:10,proposal:50,deal:250,repeat:150};
+const LEVELS=[{min:0,name:'Rookie'},{min:300,name:'Pipeline Builder'},{min:800,name:'Deal Maker'},{min:1500,name:'Closer'},{min:3000,name:'Sales Champion'}];
 const todayISO=()=>new Date().toISOString().slice(0,10);
 const days=(n)=>{const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
-function seed(){return {profile:{name:'Farid Adam',target:4},prospects:[
-{id:'p1',name:'Toko Sinar Jaya',contact:'Pak Budi · Retail',stage:'hot',value:25000000,next:'Follow-up harga',emoji:'SJ'},
-{id:'p2',name:'CV Maju Sejahtera',contact:'Bu Rani · Procurement',stage:'proposal',value:40000000,next:'Kirim proposal revisi',emoji:'MS'},
-{id:'p3',name:'Toko Makmur',contact:'Pak Hendra · Owner',stage:'deal',value:18000000,next:'Persiapan PO',emoji:'TM'},
-{id:'p4',name:'PT Karya Bersama',contact:'Ibu Nita · Finance',stage:'cold',value:12000000,next:'Kenalkan solusi',emoji:'KB'}],activities:[
-{id:'a1',type:'visit',prospectId:'p1',title:'Visit dan follow-up penawaran',date:todayISO(),time:'09:00',note:'Bawa simulasi harga dan dua opsi paket.',status:'plan',createdAt:Date.now()-30000},
-{id:'a2',type:'followup',prospectId:'p2',title:'Konfirmasi proposal revisi',date:todayISO(),time:'13:30',note:'Pastikan kebutuhan user dan timeline keputusan.',status:'plan',createdAt:Date.now()-20000},
-{id:'a3',type:'visit',prospectId:'p3',title:'Finalisasi kebutuhan unit',date:days(-1),time:'10:00',note:'Customer setuju spesifikasi awal.',status:'done',createdAt:Date.now()-86400000},
-{id:'a4',type:'followup',prospectId:'p4',title:'Perkenalan produk',date:days(-2),time:'15:00',note:'Belum ada respons, jadwalkan ulang minggu depan.',status:'follow',createdAt:Date.now()-172800000}
-]}}
-function load(){try{return JSON.parse(localStorage.getItem(KEY))||seed()}catch(e){return seed()}}function save(){localStorage.setItem(KEY,JSON.stringify(DB))}DB=load();save();
-function goPage(id){const cur=document.querySelector('.page.on');if(cur&&cur.id!==id)stack.push(cur.id);document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(id).classList.add('on');renderPage(id)}function goBack(fallback){const prev=stack.pop()||fallback;document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(prev).classList.add('on');renderPage(prev)}function setNav(id,el){if(el){el.closest('.bot-nav').querySelectorAll('.nav-item').forEach(x=>x.classList.remove('on'));el.classList.add('on')}goPage(id)}function renderPage(id){if(id==='pg-home')renderHome();if(id==='pg-activities')renderActivities();if(id==='pg-prospects')renderProspects();if(id==='pg-report')renderReport();if(id==='pg-profile')renderProfile();if(id==='pg-detail')renderDetail()}
-function getProspect(id){return DB.prospects.find(x=>x.id===id)||{name:'Prospek tidak ditemukan',contact:'—',value:0}}
-function fmt(n){return 'Rp '+(n||0).toLocaleString('id-ID')}function labelType(t){return t==='visit'?'Visit':t==='followup'?'Follow-up':'Deal'}function iconType(t){return t==='visit'?'ti ti-map-pin':t==='followup'?'ti ti-phone-call':'ti ti-handshake'}function dateText(d){const today=todayISO();if(d===today)return'Hari ini';if(d===days(1))return'Besok';if(d===days(-1))return'Kemarin';return new Date(d+'T00:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short'})}
-function renderHome(){const t=todayISO(), agenda=DB.activities.filter(a=>a.date===t&&a.status!=='done').sort((a,b)=>a.time.localeCompare(b.time)), done=DB.activities.filter(a=>a.date===t&&a.status==='done').length, target=DB.profile.target||4, pipeline=DB.prospects.filter(p=>p.stage!=='lost').reduce((s,p)=>s+p.value,0), deals=DB.prospects.filter(p=>p.stage==='deal').length, overdue=DB.activities.filter(a=>a.status!=='done'&&a.date<t).length;document.getElementById('kpi-visit').textContent=`${done}/${target}`;document.getElementById('kpi-deal').textContent=deals;document.getElementById('kpi-pipeline').textContent=pipeline>=1000000?'Rp '+(pipeline/1000000).toFixed(0)+'jt':fmt(pipeline);const pct=Math.min(100,Math.round(done/target*100));document.getElementById('today-progress').textContent=pct+'%';document.getElementById('progress-bar').style.width=pct+'%';document.getElementById('overdue-count').textContent=overdue;document.getElementById('overdue-note').textContent=overdue?'Perlu ditindaklanjuti':'Semua agenda aman';document.getElementById('agenda-list').innerHTML=agenda.length?agenda.map(activityRow).join(''):'<div class="empty"><i class="ti ti-calendar-check"></i><p>Tidak ada agenda tersisa hari ini.</p></div>';const recent=[...DB.activities].sort((a,b)=>b.createdAt-a.createdAt).slice(0,4);document.getElementById('recent-list').innerHTML=recent.length?recent.map(activityRow).join(''):'<div class="empty"><i class="ti ti-notes"></i><p>Belum ada aktivitas.</p></div>'}
+const dayDiff=(iso)=>Math.round((new Date(todayISO())-new Date(iso))/86400000);
+function stageLabel(id){return (STAGES.find(s=>s.id===id)||{}).label||id}
+function stageColor(id){return (STAGES.find(s=>s.id===id)||{}).color||'gray'}
+
+function seed(){return {
+ profile:{name:'Farid Adam',target:{visit:60,followup:120,proposal:20,deal:10,omzet:300000000}},
+ points:0,
+ prospects:[
+  {id:'p1',name:'Toko Sinar Jaya',pic:'Pak Budi',phone:'6281234500001',location:'Bandung, Jawa Barat',category:'Retail',potentialValue:25000000,products:'Paket A + instalasi',notes:'Butuh penawaran harga kompetitif untuk 3 cabang.',riskNote:'',stage:'proposal',lastContactDate:days(-2),nextFollowupDate:todayISO(),createdAt:Date.now()-9000000},
+  {id:'p2',name:'CV Maju Sejahtera',pic:'Bu Rani',phone:'6281234500002',location:'Jakarta Selatan',category:'Procurement / Distributor',potentialValue:40000000,products:'Paket Enterprise',notes:'Menunggu keputusan tim procurement, timeline akhir bulan.',riskNote:'',stage:'negotiation',lastContactDate:days(-1),nextFollowupDate:todayISO(),createdAt:Date.now()-8000000},
+  {id:'p3',name:'Toko Makmur',pic:'Pak Hendra',phone:'6281234500003',location:'Surabaya',category:'Retail',potentialValue:18000000,products:'Paket Standar',notes:'Sudah setuju spesifikasi, tinggal PO.',riskNote:'',stage:'deal',lastContactDate:days(-1),nextFollowupDate:days(3),createdAt:Date.now()-7000000},
+  {id:'p4',name:'PT Karya Bersama',pic:'Ibu Nita',phone:'6281234500004',location:'Bekasi',category:'Manufaktur',potentialValue:12000000,products:'Belum ditentukan',notes:'Baru kenal, perlu penjajakan kebutuhan.',riskNote:'',stage:'new',lastContactDate:days(-20),nextFollowupDate:days(-3),createdAt:Date.now()-6000000},
+  {id:'p5',name:'UD Berkah Abadi',pic:'Pak Anwar',phone:'6281234500005',location:'Semarang',category:'F&B',potentialValue:32000000,products:'Paket A - repeat',notes:'Sudah repeat order sebelumnya, hubungan baik.',riskNote:'',stage:'repeat',lastContactDate:days(-5),nextFollowupDate:days(10),createdAt:Date.now()-5000000},
+  {id:'p6',name:'PT Prima Niaga',pic:'Pak Yusuf',phone:'6281234500006',location:'Tangerang',category:'Distributor',potentialValue:65000000,products:'Paket Enterprise + support',notes:'Nilai besar, sedang diskon final.',riskNote:'',stage:'negotiation',lastContactDate:days(-6),nextFollowupDate:days(-1),createdAt:Date.now()-4000000},
+  {id:'p7',name:'Toko Abadi Jaya',pic:'Pak Wawan',phone:'6281234500007',location:'Bogor',category:'Retail',potentialValue:9000000,products:'Paket Standar',notes:'Sempat tertarik lalu tidak respon.',riskNote:'Budget dialihkan ke kompetitor tahun ini.',stage:'lost',lastContactDate:days(-30),nextFollowupDate:'',createdAt:Date.now()-3000000},
+  {id:'p8',name:'CV Sumber Rejeki',pic:'Bu Sari',phone:'6281234500008',location:'Yogyakarta',category:'Retail',potentialValue:15000000,products:'Belum ditentukan',notes:'Baru kualifikasi awal, kebutuhan cocok.',riskNote:'',stage:'qualified',lastContactDate:days(-3),nextFollowupDate:days(1),createdAt:Date.now()-2000000}
+ ],
+ activities:[
+  {id:'a1',type:'visit',prospectId:'p1',title:'Visit dan follow-up penawaran',date:todayISO(),time:'09:00',note:'Bawa simulasi harga dan dua opsi paket.',status:'plan',createdAt:Date.now()-30000},
+  {id:'a2',type:'followup',prospectId:'p2',title:'Konfirmasi keputusan procurement',date:todayISO(),time:'13:30',note:'Pastikan kebutuhan user dan timeline keputusan.',status:'plan',createdAt:Date.now()-20000},
+  {id:'a3',type:'visit',prospectId:'p3',title:'Finalisasi kebutuhan unit',date:days(-1),time:'10:00',note:'Customer setuju spesifikasi awal.',status:'done',createdAt:Date.now()-86400000},
+  {id:'a4',type:'followup',prospectId:'p4',title:'Perkenalan produk',date:days(-3),time:'15:00',note:'Belum ada respons, jadwalkan ulang.',status:'plan',createdAt:Date.now()-172800000},
+  {id:'a5',type:'proposal',prospectId:'p6',title:'Kirim revisi proposal diskon',date:days(-1),time:'11:00',note:'Revisi harga final untuk closing.',status:'plan',createdAt:Date.now()-90000},
+  {id:'a6',type:'deal',prospectId:'p3',title:'Closing PO Toko Makmur',date:days(-2),time:'09:30',note:'PO diterbitkan.',status:'done',createdAt:Date.now()-190000000}
+ ]
+}}
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(!d)return seed();if(!d.points)d.points=0;return d}catch(e){return seed()}}
+function save(){localStorage.setItem(KEY,JSON.stringify(DB))}
+DB=load();save();
+
+function goPage(id){const cur=document.querySelector('.page.on');if(cur&&cur.id!==id)stack.push(cur.id);document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(id).classList.add('on');renderPage(id)}
+function goBack(fallback){const prev=stack.pop()||fallback;document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(prev).classList.add('on');renderPage(prev)}
+function setNav(id,el){if(el){el.closest('.bot-nav').querySelectorAll('.nav-item').forEach(x=>x.classList.remove('on'));el.classList.add('on')}goPage(id)}
+function renderPage(id){
+ if(id==='pg-home')renderHome();
+ if(id==='pg-activities')renderActivities();
+ if(id==='pg-prospects')renderPipelineView();
+ if(id==='pg-prospect-detail')renderProspectDetail();
+ if(id==='pg-followup')renderFollowup();
+ if(id==='pg-target')renderTarget();
+ if(id==='pg-report')renderReport();
+ if(id==='pg-profile')renderProfile();
+ if(id==='pg-detail')renderDetail();
+}
+function getProspect(id){return DB.prospects.find(x=>x.id===id)||{name:'Prospek tidak ditemukan',pic:'—',phone:'',value:0}}
+function fmt(n){return 'Rp '+(n||0).toLocaleString('id-ID')}
+function fmtShort(n){n=n||0;return n>=1000000?'Rp '+(n/1000000).toFixed(0)+'jt':fmt(n)}
+function labelType(t){return {visit:'Visit',followup:'Follow-up',proposal:'Proposal',deal:'Deal',repeat:'Repeat Order'}[t]||t}
+function iconType(t){return {visit:'ti ti-map-pin',followup:'ti ti-phone-call',proposal:'ti ti-file-text',deal:'ti ti-handshake',repeat:'ti ti-repeat'}[t]||'ti ti-circle'}
+function dateText(d){if(!d)return'—';const today=todayISO();if(d===today)return'Hari ini';if(d===days(1))return'Besok';if(d===days(-1))return'Kemarin';return new Date(d+'T00:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short'})}
+
+/* ===== ACTIVITIES ===== */
+function renderHome(){
+ const t=todayISO(), agenda=DB.activities.filter(a=>a.date===t&&a.status==='plan').sort((a,b)=>a.time.localeCompare(b.time)),
+ doneToday=DB.activities.filter(a=>a.date===t&&a.status==='done').length,
+ target=(DB.profile.target&&DB.profile.target.visit)?Math.max(1,Math.round(DB.profile.target.visit/26)):4,
+ pipeline=DB.prospects.filter(p=>!['lost'].includes(p.stage)).reduce((s,p)=>s+p.potentialValue,0),
+ dealsThisMonth=DB.prospects.filter(p=>p.stage==='deal'||p.stage==='repeat').length,
+ overdue=DB.prospects.filter(p=>p.nextFollowupDate&&p.nextFollowupDate<t&&!['lost','deal','repeat'].includes(p.stage)).length;
+ document.getElementById('kpi-visit').textContent=`${doneToday}/${target}`;
+ document.getElementById('kpi-deal').textContent=dealsThisMonth;
+ document.getElementById('kpi-pipeline').textContent=fmtShort(pipeline);
+ const pct=Math.min(100,Math.round(doneToday/target*100));
+ document.getElementById('today-progress').textContent=pct+'%';
+ document.getElementById('progress-bar').style.width=pct+'%';
+ document.getElementById('overdue-count').textContent=overdue;
+ document.getElementById('overdue-note').textContent=overdue?'Perlu ditindaklanjuti':'Semua agenda aman';
+ document.getElementById('notif-count').textContent=overdue;
+ document.getElementById('agenda-list').innerHTML=agenda.length?agenda.map(activityRow).join(''):'<div class="empty"><i class="ti ti-calendar-check"></i><p>Tidak ada agenda tersisa hari ini.</p></div>';
+ const recent=[...DB.activities].sort((a,b)=>b.createdAt-a.createdAt).slice(0,4);
+ document.getElementById('recent-list').innerHTML=recent.length?recent.map(activityRow).join(''):'<div class="empty"><i class="ti ti-notes"></i><p>Belum ada aktivitas.</p></div>';
+ const hot=DB.prospects.filter(p=>['proposal','negotiation'].includes(p.stage)).length, total=DB.prospects.length||1;
+ document.getElementById('mini-report').innerHTML=`<div class="chart-title">Ringkasan Pipeline</div><div style="font-size:13px;font-weight:800">Prospek aktif (hot) <span style="float:right;color:var(--c)">${hot}/${total}</span></div><div class="progress"><div style="width:${hot/total*100}%"></div></div>`;
+}
 function activityRow(a){const p=getProspect(a.prospectId);return `<div class="agenda-item" onclick="showDetail('${a.id}')"><div class="time-pill">${a.time||'—'}</div><div class="item-icon ${a.type==='visit'?'visit':a.type==='followup'?'follow':'deal'}"><i class="${iconType(a.type)}"></i></div><div class="item-meta"><div class="item-title">${a.title}</div><div class="item-sub">${p.name} · ${dateText(a.date)}</div></div><span class="status ${a.status}">${a.status==='plan'?'Rencana':a.status==='done'?'Selesai':a.status==='follow'?'Follow-up':'Tidak jadi'}</span></div>`}
-function renderActivities(){let arr=[...DB.activities].sort((a,b)=>`${b.date}${b.time}`.localeCompare(`${a.date}${a.time}`));if(activityFilter==='visit'||activityFilter==='followup')arr=arr.filter(a=>a.type===activityFilter);if(activityFilter==='done')arr=arr.filter(a=>a.status==='done');document.getElementById('activity-list').innerHTML=arr.length?`<div class="card" style="margin:0 14px">${arr.map(activityRow).join('')}</div>`:'<div class="empty"><i class="ti ti-clipboard-off"></i><p>Belum ada aktivitas dalam filter ini.</p></div>'}function setActivityFilter(f,el){activityFilter=f;el.parentElement.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));el.classList.add('on');renderActivities()}
-function openActivityForm(type='visit',id=''){document.getElementById('edit-activity-id').value=id;document.getElementById('form-title').textContent=id?'Ubah Aktivitas':'Tambah Aktivitas';const sel=document.getElementById('activity-prospect');sel.innerHTML=DB.prospects.map(p=>`<option value="${p.id}">${p.name} — ${p.contact}</option>`).join('');const a=id?DB.activities.find(x=>x.id===id):null;selectType(a?.type||type,document.querySelector(`.choice[data-type="${a?.type||type}"]`));document.getElementById('activity-prospect').value=a?.prospectId||DB.prospects[0]?.id||'';document.getElementById('activity-title').value=a?.title||'';document.getElementById('activity-date').value=a?.date||todayISO();document.getElementById('activity-time').value=a?.time||'09:00';document.getElementById('activity-note').value=a?.note||'';goPage('pg-form')}function selectType(t,el){document.querySelectorAll('.choice').forEach(x=>x.classList.remove('on'));el.classList.add('on');document.getElementById('activity-type').value=t}
-function saveActivity(){const title=document.getElementById('activity-title').value.trim(),prospectId=document.getElementById('activity-prospect').value,date=document.getElementById('activity-date').value,time=document.getElementById('activity-time').value,note=document.getElementById('activity-note').value.trim(),type=document.getElementById('activity-type').value,id=document.getElementById('edit-activity-id').value;if(!title||!prospectId||!date){showToast('Lengkapi pelanggan, tujuan, dan tanggal.');return}if(id){const a=DB.activities.find(x=>x.id===id);Object.assign(a,{title,prospectId,date,time,note,type});showToast('Aktivitas diperbarui.')}else{DB.activities.unshift({id:'a'+Date.now(),type,prospectId,title,date,time,note,status:'plan',createdAt:Date.now()});showToast('Aktivitas ditambahkan.')}save();goPage('pg-activities')}
-function showDetail(id){currentDetail=id;goPage('pg-detail')}function renderDetail(){const a=DB.activities.find(x=>x.id===currentDetail);if(!a)return;const p=getProspect(a.prospectId);document.getElementById('detail-body').innerHTML=`<div class="card" style="padding:17px;margin-bottom:10px"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div><div style="font-size:19px;font-weight:900;line-height:1.3">${a.title}</div><div style="font-size:11px;font-weight:700;color:#8A9B98;margin-top:5px">${labelType(a.type)} · ${dateText(a.date)} · ${a.time}</div></div><span class="status ${a.status}">${a.status==='plan'?'Rencana':a.status==='done'?'Selesai':'Follow-up'}</span></div><div style="height:1px;background:#EAF2F0;margin:16px 0"></div><div style="font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.6px">Pelanggan</div><div style="font-size:15px;font-weight:800;margin-top:4px">${p.name}</div><div style="font-size:11px;font-weight:600;color:#8A9B98;margin-top:2px">${p.contact}</div></div><div class="card" style="padding:17px;margin-bottom:10px"><div style="font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px">Catatan Aktivitas</div><div style="font-size:13px;font-weight:600;line-height:1.6;color:#385158">${a.note||'Belum ada catatan.'}</div></div>${a.status!=='done'?`<button class="cta-main" onclick="completeActivity('${a.id}')"><i class="ti ti-check"></i> Tandai Selesai</button><button class="cta-main danger" style="margin-top:8px" onclick="markFollow('${a.id}')"><i class="ti ti-calendar-time"></i> Jadwalkan Follow-up</button>`:`<div class="card" style="padding:14px;text-align:center;color:var(--green);font-size:13px;font-weight:800"><i class="ti ti-circle-check"></i> Aktivitas sudah selesai</div>`}`}
-function completeActivity(id){const a=DB.activities.find(x=>x.id===id);a.status='done';save();showToast('Aktivitas ditandai selesai.');renderDetail();renderHome()}function markFollow(id){const a=DB.activities.find(x=>x.id===id);a.status='follow';a.date=days(1);a.time='09:00';save();showToast('Follow-up dijadwalkan untuk besok.');renderDetail();renderHome()}function editCurrentActivity(){openActivityForm('visit',currentDetail)}
-function renderProspects(){let p=[...DB.prospects];if(prospectFilter!=='all')p=p.filter(x=>x.stage===prospectFilter);document.getElementById('prospect-total').textContent=DB.prospects.length;document.getElementById('prospect-hot').textContent=DB.prospects.filter(x=>x.stage==='hot').length;document.getElementById('prospect-value').textContent='Rp '+(DB.prospects.reduce((s,x)=>s+x.value,0)/1000000).toFixed(0)+'jt';document.getElementById('prospect-list').innerHTML=p.length?`<div class="pipeline-wrap">${p.map(prospectCard).join('')}</div>`:'<div class="empty"><i class="ti ti-building-off"></i><p>Tidak ada prospek pada filter ini.</p></div>'}function prospectCard(p){const st={hot:'🔥 Hot',proposal:'Proposal',deal:'Deal',cold:'Prospek'}[p.stage]||p.stage;return `<div class="pipeline-card" onclick="openProspectDetail('${p.id}')"><div class="pipeline-top"><div class="company-avatar">${p.emoji||p.name.slice(0,2)}</div><div class="pipeline-info"><div class="pipeline-name">${p.name}</div><div class="pipeline-sub">${p.contact}</div><div class="pipeline-value">${fmt(p.value)}</div></div><span class="status ${p.stage==='deal'?'done':p.stage==='hot'?'lost':p.stage==='proposal'?'follow':'plan'}">${st}</span></div><div class="pipeline-footer"><span class="small-date"><i class="ti ti-arrow-right"></i> ${p.next}</span><i class="ti ti-chevron-right" style="color:#8A9B98"></i></div></div>`}function setProspectFilter(f,el){prospectFilter=f;el.parentElement.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));el.classList.add('on');renderProspects()}
-function openProspectForm(){openModal(`<div class="modal-title">Tambah Prospek</div><div class="form-card"><div class="form-label">Nama Perusahaan</div><input id="new-p-name" placeholder="Contoh: PT Makmur Abadi"><div class="form-divider"></div><div class="form-label">Kontak</div><input id="new-p-contact" placeholder="Nama PIC · Jabatan"><div class="form-divider"></div><div class="form-label">Potensi Nilai</div><input type="number" id="new-p-value" placeholder="0"></div><div class="form-card"><div class="form-label">Tahap Awal</div><select id="new-p-stage"><option value="cold">Prospek</option><option value="hot">Hot</option><option value="proposal">Proposal</option></select></div><button class="cta-main" onclick="saveProspect()">Simpan Prospek</button>`)}function saveProspect(){const name=document.getElementById('new-p-name').value.trim(),contact=document.getElementById('new-p-contact').value.trim(),value=Number(document.getElementById('new-p-value').value||0),stage=document.getElementById('new-p-stage').value;if(!name){showToast('Nama perusahaan wajib diisi.');return}DB.prospects.unshift({id:'p'+Date.now(),name,contact:contact||'Kontak belum diisi',value,stage,next:'Jadwalkan aktivitas pertama',emoji:name.split(' ').map(x=>x[0]).join('').slice(0,2)});save();closeModal();renderProspects();showToast('Prospek baru ditambahkan.')}
-function openProspectDetail(id){const p=getProspect(id);openModal(`<div class="modal-title">${p.name}</div><div style="font-size:12px;font-weight:600;color:#8A9B98;margin-top:-7px;margin-bottom:15px">${p.contact}</div><div class="form-card"><div class="form-label">Tahap Pipeline</div><select id="stage-${id}"><option value="cold" ${p.stage==='cold'?'selected':''}>Prospek</option><option value="hot" ${p.stage==='hot'?'selected':''}>Hot</option><option value="proposal" ${p.stage==='proposal'?'selected':''}>Proposal</option><option value="deal" ${p.stage==='deal'?'selected':''}>Deal</option><option value="lost" ${p.stage==='lost'?'selected':''}>Lost</option></select><div class="form-divider"></div><div class="form-label">Next Action</div><input id="next-${id}" value="${p.next}"></div><button class="cta-main" onclick="saveProspectDetail('${id}')">Simpan Perubahan</button><button class="cta-main" style="margin-top:8px;background:linear-gradient(135deg,var(--blue),#1D4ED8)" onclick="closeModal();openActivityForm('visit');setTimeout(()=>document.getElementById('activity-prospect').value='${id}',0)">Tambah Aktivitas</button>`)}function saveProspectDetail(id){const p=getProspect(id);p.stage=document.getElementById('stage-'+id).value;p.next=document.getElementById('next-'+id).value.trim()||'Belum ada next action';save();closeModal();renderProspects();showToast('Pipeline diperbarui.')}
-function renderReport(){const now=new Date(), start=new Date();start.setDate(now.getDate()-6);let counts=[],labels=[];for(let i=0;i<7;i++){const d=new Date(start);d.setDate(start.getDate()+i);const iso=d.toISOString().slice(0,10);counts.push(DB.activities.filter(a=>a.date===iso).length);labels.push(d.toLocaleDateString('id-ID',{weekday:'narrow'}))}document.getElementById('bar-chart').innerHTML=counts.map((n,i)=>`<div class="bar-col"><div class="bar" style="height:${Math.max(8,Math.min(100,n*25))}%"></div><div class="bar-label">${labels[i]}</div></div>`).join('');document.getElementById('report-visits').textContent=DB.activities.filter(a=>a.type==='visit').length;document.getElementById('report-follow').textContent=DB.activities.filter(a=>a.type==='followup').length;document.getElementById('report-deals').textContent=DB.prospects.filter(p=>p.stage==='deal').length;const total=DB.prospects.length||1,hot=DB.prospects.filter(p=>p.stage==='hot'||p.stage==='proposal'||p.stage==='deal').length,deals=DB.prospects.filter(p=>p.stage==='deal').length;document.getElementById('conversion-list').innerHTML=`<div style="font-size:13px;font-weight:800">Prospek aktif <span style="float:right;color:var(--c)">${hot}/${total}</span></div><div class="progress"><div style="width:${hot/total*100}%"></div></div><div style="font-size:13px;font-weight:800;margin-top:15px">Deal tercapai <span style="float:right;color:var(--green)">${deals}/${total}</span></div><div class="progress"><div style="width:${deals/total*100}%;background:var(--green)"></div></div>`;const done=DB.activities.filter(a=>a.status==='done').length,planned=DB.activities.filter(a=>a.status==='plan'||a.status==='follow').length;document.getElementById('weekly-summary').innerHTML=`<div style="font-size:14px;font-weight:900">${done} aktivitas telah selesai</div><div style="font-size:12px;font-weight:600;line-height:1.6;color:#637774;margin-top:6px">Masih ada <b style="color:var(--yellow)">${planned} agenda</b> yang perlu ditindaklanjuti. Fokus pada prospek hot dan proposal agar pipeline bergerak ke deal.</div>`}
-function renderProfile(){document.getElementById('profile-name').textContent=DB.profile.name;document.getElementById('target-display').textContent=(DB.profile.target||0)+' Visit'}function openProfileEdit(){openModal(`<div class="modal-title">Edit Profil</div><div class="form-card"><div class="form-label">Nama</div><input id="profile-name-input" value="${DB.profile.name}"></div><button class="cta-main" onclick="saveProfile()">Simpan</button>`)}function saveProfile(){DB.profile.name=document.getElementById('profile-name-input').value.trim()||'Farid Adam';save();closeModal();renderProfile();renderHome();showToast('Profil diperbarui.')}function openTargetSetting(){openModal(`<div class="modal-title">Target Harian</div><div class="form-card"><div class="form-label">Jumlah Visit / Aktivitas per Hari</div><input type="number" id="target-input" min="1" value="${DB.profile.target||4}"></div><button class="cta-main" onclick="saveTarget()">Simpan Target</button>`)}function saveTarget(){DB.profile.target=Math.max(1,Number(document.getElementById('target-input').value||4));save();closeModal();renderProfile();renderHome();showToast('Target harian diperbarui.')}function exportSummary(){const text=`ActivityCRM\nAktivitas: ${DB.activities.length}\nProspek: ${DB.prospects.length}\nPipeline: ${fmt(DB.prospects.reduce((s,p)=>s+p.value,0))}`;navigator.clipboard?.writeText(text);showToast('Ringkasan disalin ke clipboard.')}function resetDemo(){if(!confirm('Reset seluruh data CRM ke data demo?'))return;DB=seed();save();renderProfile();renderHome();showToast('Data demo berhasil direset.')}
-function openModal(html){document.getElementById('modal-content').innerHTML=html;document.getElementById('modal').classList.add('show')}function closeModal(){document.getElementById('modal').classList.remove('show')}let toastTimer;function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2400)}
+function renderActivities(){
+ let arr=[...DB.activities].sort((a,b)=>`${b.date}${b.time}`.localeCompare(`${a.date}${a.time}`));
+ if(['visit','followup','proposal','deal','repeat'].includes(activityFilter))arr=arr.filter(a=>a.type===activityFilter);
+ if(activityFilter==='done')arr=arr.filter(a=>a.status==='done');
+ if(activityFilter==='overdue')arr=arr.filter(a=>a.status==='plan'&&a.date<todayISO());
+ document.getElementById('activity-list').innerHTML=arr.length?`<div class="card" style="margin:0 14px">${arr.map(activityRow).join('')}</div>`:'<div class="empty"><i class="ti ti-clipboard-off"></i><p>Belum ada aktivitas dalam filter ini.</p></div>';
+}
+function setActivityFilter(f,el){activityFilter=f;el.parentElement.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));el.classList.add('on');renderActivities()}
+function openActivityForm(type='visit',id=''){
+ document.getElementById('edit-activity-id').value=id;
+ document.getElementById('form-title').textContent=id?'Ubah Aktivitas':'Tambah Aktivitas';
+ const sel=document.getElementById('activity-prospect');sel.innerHTML=DB.prospects.map(p=>`<option value="${p.id}">${p.name} — ${p.pic}</option>`).join('');
+ const a=id?DB.activities.find(x=>x.id===id):null;
+ selectType(a?a.type:type,document.querySelector(`.choice[data-type="${a?a.type:type}"]`));
+ document.getElementById('activity-prospect').value=(a&&a.prospectId)||(currentProspect||(DB.prospects[0]&&DB.prospects[0].id)||'');
+ document.getElementById('activity-title').value=a?a.title:'';
+ document.getElementById('activity-date').value=a?a.date:todayISO();
+ document.getElementById('activity-time').value=a?a.time:'09:00';
+ document.getElementById('activity-note').value=a?a.note:'';
+ goPage('pg-form');
+}
+function selectType(t,el){document.querySelectorAll('.choice').forEach(x=>x.classList.remove('on'));if(el)el.classList.add('on');document.getElementById('activity-type').value=t}
+function saveActivity(){
+ const title=document.getElementById('activity-title').value.trim(),prospectId=document.getElementById('activity-prospect').value,date=document.getElementById('activity-date').value,time=document.getElementById('activity-time').value,note=document.getElementById('activity-note').value.trim(),type=document.getElementById('activity-type').value,id=document.getElementById('edit-activity-id').value;
+ if(!title||!prospectId||!date){showToast('Lengkapi pelanggan, tujuan, dan tanggal.');return}
+ if(id){const a=DB.activities.find(x=>x.id===id);Object.assign(a,{title,prospectId,date,time,note,type});showToast('Aktivitas diperbarui.')}
+ else{DB.activities.unshift({id:'a'+Date.now(),type,prospectId,title,date,time,note,status:'plan',createdAt:Date.now()});showToast('Aktivitas ditambahkan.')}
+ const pr=getProspect(prospectId);if(pr&&pr.id)pr.lastContactDate=date<=todayISO()?date:pr.lastContactDate;
+ save();goPage('pg-activities');
+}
+function showDetail(id){currentDetail=id;goPage('pg-detail')}
+function renderDetail(){
+ const a=DB.activities.find(x=>x.id===currentDetail);if(!a)return;const p=getProspect(a.prospectId);
+ document.getElementById('detail-body').innerHTML=`<div class="card" style="padding:17px;margin-bottom:10px"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div><div style="font-size:19px;font-weight:900;line-height:1.3">${a.title}</div><div style="font-size:11px;font-weight:700;color:#8A9B98;margin-top:5px">${labelType(a.type)} · ${dateText(a.date)} · ${a.time}</div></div><span class="status ${a.status}">${a.status==='plan'?'Rencana':a.status==='done'?'Selesai':'Follow-up'}</span></div><div style="height:1px;background:#EAF2F0;margin:16px 0"></div><div style="font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.6px">Pelanggan</div><div style="font-size:15px;font-weight:800;margin-top:4px;cursor:pointer" onclick="openProspectDetail('${p.id}')">${p.name} <i class="ti ti-chevron-right" style="font-size:12px;color:#8A9B98"></i></div><div style="font-size:11px;font-weight:600;color:#8A9B98;margin-top:2px">${p.pic||''}</div></div><div class="card" style="padding:17px;margin-bottom:10px"><div style="font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px">Catatan Aktivitas</div><div style="font-size:13px;font-weight:600;line-height:1.6;color:#385158">${a.note||'Belum ada catatan.'}</div></div>${a.status!=='done'?`<button class="cta-main" onclick="completeActivity('${a.id}')"><i class="ti ti-check"></i> Tandai Selesai (+${POINTS[a.type]||0} poin)</button><button class="cta-main danger" style="margin-top:8px" onclick="markFollow('${a.id}')"><i class="ti ti-calendar-time"></i> Jadwalkan Ulang Besok</button>`:`<div class="card" style="padding:14px;text-align:center;color:var(--green);font-size:13px;font-weight:800"><i class="ti ti-circle-check"></i> Aktivitas sudah selesai</div>`}`;
+}
+function completeActivity(id){
+ const a=DB.activities.find(x=>x.id===id);if(a.status==='done')return;a.status='done';a.completedAt=Date.now();
+ const pts=POINTS[a.type]||0;DB.points=(DB.points||0)+pts;
+ const p=getProspect(a.prospectId);if(p&&p.id)p.lastContactDate=todayISO();
+ if(a.type==='deal'&&p&&p.id&&p.stage!=='repeat')p.stage='deal';
+ if(a.type==='repeat'&&p&&p.id)p.stage='repeat';
+ save();showToast(`Aktivitas selesai. +${pts} poin!`);renderDetail();renderHome();
+}
+function markFollow(id){const a=DB.activities.find(x=>x.id===id);a.date=days(1);a.time='09:00';save();showToast('Dijadwalkan ulang untuk besok.');renderDetail();renderHome()}
+function editCurrentActivity(){openActivityForm('visit',currentDetail)}
+
+/* ===== PROSPECTS / PIPELINE (Iterasi 2) ===== */
+function setPipelineView(v,el){pipelineView=v;el.parentElement.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));el.classList.add('on');renderPipelineView()}
+function renderPipelineView(){
+ document.getElementById('prospect-total').textContent=DB.prospects.length;
+ document.getElementById('prospect-hot').textContent=DB.prospects.filter(x=>['proposal','negotiation'].includes(x.stage)).length;
+ document.getElementById('prospect-value').textContent=fmtShort(DB.prospects.filter(p=>p.stage!=='lost').reduce((s,x)=>s+x.potentialValue,0));
+ const el=document.getElementById('pipeline-view');
+ if(pipelineView==='board'){
+  el.innerHTML=`<div class="kanban">${STAGES.map(st=>{const items=DB.prospects.filter(p=>p.stage===st.id);const val=items.reduce((s,p)=>s+p.potentialValue,0);return `<div class="kcol"><h4><span>${st.label}</span><span class="tag ${st.color}" style="margin:0">${items.length}</span></h4>${items.length?items.map(p=>`<div class="kcard" onclick="openProspectDetail('${p.id}')"><b>${p.name}</b><small>${fmtShort(p.potentialValue)} · ${p.pic||'—'}</small></div>`).join(''):'<div style="font-size:10px;color:#8A9B98;font-weight:700;padding:8px 0">Kosong</div>'}</div>`}).join('')}</div>`;
+ }else{
+  el.innerHTML=`<div class="pipeline-wrap" style="padding-top:6px">${DB.prospects.map(prospectCard).join('')}</div>`;
+ }
+}
+function prospectCard(p){return `<div class="pipeline-card" onclick="openProspectDetail('${p.id}')"><div class="pipeline-top"><div class="company-avatar">${(p.name||'').split(' ').map(x=>x[0]).join('').slice(0,2)}</div><div class="pipeline-info"><div class="pipeline-name">${p.name}</div><div class="pipeline-sub">${p.pic||'—'} · ${p.category||'—'}</div><div class="pipeline-value">${fmt(p.potentialValue)}</div></div><span class="tag ${stageColor(p.stage)}" style="margin:0">${stageLabel(p.stage)}</span></div><div class="pipeline-footer"><span class="small-date"><i class="ti ti-arrow-right"></i> ${nextAction(p)}</span></div></div>`}
+function openProspectDetail(id){currentProspect=id;goPage('pg-prospect-detail')}
+function nextAction(p){
+ const gap=dayDiff(p.lastContactDate||todayISO());
+ if(p.stage==='new')return 'Kirim perkenalan & kualifikasi kebutuhan';
+ if(p.stage==='qualified')return 'Jadwalkan meeting kebutuhan';
+ if(p.stage==='meeting')return 'Follow-up hasil meeting';
+ if(p.stage==='proposal')return gap>7?'Follow-up proposal, sudah lama tidak dihubungi':'Tunggu respon, follow-up terjadwal';
+ if(p.stage==='negotiation')return p.potentialValue>=50000000?'Prioritas tinggi, follow-up intensif':'Follow-up standar, dorong keputusan';
+ if(p.stage==='deal')return 'Ucapkan terima kasih & tawarkan repeat order';
+ if(p.stage==='lost')return 'Evaluasi alasan lost, follow-up ulang beberapa bulan lagi';
+ if(p.stage==='repeat')return 'Jaga hubungan, follow-up rutin berkala';
+ return 'Tentukan next action';
+}
+function activityHistoryFor(id){return DB.activities.filter(a=>a.prospectId===id).sort((a,b)=>b.createdAt-a.createdAt)}
+function renderProspectDetail(){
+ const p=getProspect(currentProspect);if(!p||!p.id){goBack('pg-prospects');return}
+ const hist=activityHistoryFor(p.id), gap=dayDiff(p.lastContactDate||todayISO());
+ document.getElementById('prospect-detail-body').innerHTML=`
+ <div class="card" style="padding:17px;margin-bottom:10px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div><div style="font-size:18px;font-weight:900">${p.name}</div><div style="font-size:11.5px;font-weight:700;color:#8A9B98;margin-top:3px">${p.pic||'—'} · ${p.category||'—'}</div></div><span class="tag ${stageColor(p.stage)}">${stageLabel(p.stage)}</span></div>
+  <div style="height:1px;background:#EAF2F0;margin:14px 0"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px">
+   <div><div style="font-size:9.5px;font-weight:800;color:#8A9B98;text-transform:uppercase">Lokasi</div><div style="font-weight:700;margin-top:2px">${p.location||'—'}</div></div>
+   <div><div style="font-size:9.5px;font-weight:800;color:#8A9B98;text-transform:uppercase">Nilai Potensi</div><div style="font-weight:700;margin-top:2px;color:var(--c)">${fmt(p.potentialValue)}</div></div>
+   <div><div style="font-size:9.5px;font-weight:800;color:#8A9B98;text-transform:uppercase">Produk Diminati</div><div style="font-weight:700;margin-top:2px">${p.products||'—'}</div></div>
+   <div><div style="font-size:9.5px;font-weight:800;color:#8A9B98;text-transform:uppercase">Kontak Terakhir</div><div style="font-weight:700;margin-top:2px">${gap===0?'Hari ini':gap+' hari lalu'}</div></div>
+  </div>
+ </div>
+ <div class="card" style="padding:17px;margin-bottom:10px"><div style="font-size:10px;font-weight:800;color:#8A9B98;text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px">Catatan Kebutuhan</div><div style="font-size:13px;font-weight:600;line-height:1.6;color:#385158">${p.notes||'Belum ada catatan.'}</div>${p.riskNote?`<div style="height:1px;background:#EAF2F0;margin:12px 0"></div><div style="font-size:10px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">Risiko / Alasan Lost</div><div style="font-size:13px;font-weight:600;line-height:1.6;color:#385158">${p.riskNote}</div>`:''}</div>
+ <div class="card" style="padding:17px;margin-bottom:10px"><div style="font-size:10px;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px"><i class="ti ti-bulb"></i> Next Action Disarankan</div><div style="font-size:13px;font-weight:700;line-height:1.5">${nextAction(p)}</div></div>
+ <div class="form-card" style="margin-bottom:10px"><div class="form-label">Ubah Tahap Pipeline</div><select id="quick-stage" onchange="quickStageChange('${p.id}',this.value)">${STAGES.map(s=>`<option value="${s.id}" ${p.stage===s.id?'selected':''}>${s.label}</option>`).join('')}</select></div>
+ <button class="cta-main" onclick="openActivityForm('followup','')" style="margin-bottom:8px"><i class="ti ti-calendar-plus"></i> Tambah Aktivitas</button>
+ <button class="cta-main wa" onclick="openWaTemplates()" style="margin-bottom:8px"><i class="ti ti-brand-whatsapp"></i> Follow-up via WhatsApp</button>
+ <div class="sec-title" style="padding-left:0">Histori Aktivitas</div>
+ <div class="card" style="margin-bottom:20px">${hist.length?hist.map(a=>`<div class="agenda-item" onclick="showDetail('${a.id}')"><div class="item-icon ${a.type==='visit'?'visit':a.type==='followup'?'follow':'deal'}"><i class="${iconType(a.type)}"></i></div><div class="item-meta"><div class="item-title">${a.title}</div><div class="item-sub">${labelType(a.type)} · ${dateText(a.date)}</div></div><span class="status ${a.status}">${a.status==='done'?'Selesai':'Rencana'}</span></div>`).join(''):'<div class="empty"><i class="ti ti-history"></i><p>Belum ada histori aktivitas.</p></div>'}</div>
+ `;
+ document.getElementById('form-title')&&null;
+}
+function quickStageChange(id,stage){const p=getProspect(id);p.stage=stage;save();showToast('Tahap pipeline diperbarui: '+stageLabel(stage));renderProspectDetail()}
+function editCurrentProspect(){openProspectForm(currentProspect)}
+function openProspectForm(id=''){
+ document.getElementById('pf-id').value=id;
+ document.getElementById('pf-title').textContent=id?'Ubah Prospek':'Tambah Prospek';
+ const sel=document.getElementById('pf-stage');sel.innerHTML=STAGES.map(s=>`<option value="${s.id}">${s.label}</option>`).join('');
+ const p=id?getProspect(id):null;
+ document.getElementById('pf-name').value=p?p.name:'';
+ document.getElementById('pf-pic').value=p?p.pic:'';
+ document.getElementById('pf-phone').value=p?p.phone:'';
+ document.getElementById('pf-location').value=p?p.location:'';
+ document.getElementById('pf-category').value=p?p.category:'';
+ document.getElementById('pf-value').value=p?p.potentialValue:'';
+ document.getElementById('pf-products').value=p?p.products:'';
+ document.getElementById('pf-stage').value=p?p.stage:'new';
+ document.getElementById('pf-notes').value=p?p.notes:'';
+ document.getElementById('pf-risk').value=p?p.riskNote:'';
+ goPage('pg-prospect-form');
+}
+function saveProspectForm(){
+ const name=document.getElementById('pf-name').value.trim();
+ if(!name){showToast('Nama perusahaan wajib diisi.');return}
+ const id=document.getElementById('pf-id').value;
+ const data={name,pic:document.getElementById('pf-pic').value.trim(),phone:document.getElementById('pf-phone').value.trim().replace(/\D/g,''),location:document.getElementById('pf-location').value.trim(),category:document.getElementById('pf-category').value.trim(),potentialValue:Number(document.getElementById('pf-value').value||0),products:document.getElementById('pf-products').value.trim(),stage:document.getElementById('pf-stage').value,notes:document.getElementById('pf-notes').value.trim(),riskNote:document.getElementById('pf-risk').value.trim()};
+ if(id){Object.assign(getProspect(id),data);showToast('Prospek diperbarui.')}
+ else{DB.prospects.unshift(Object.assign({id:'p'+Date.now(),lastContactDate:todayISO(),nextFollowupDate:todayISO(),createdAt:Date.now()},data));showToast('Prospek baru ditambahkan.')}
+ save();goPage('pg-prospects');
+}
+
+/* ===== FOLLOW-UP / ANTI LUPA (Iterasi 3) ===== */
+const WA_TEMPLATES=[
+ {label:'Follow-up Umum',text:(p)=>`Halo ${p.pic||''}, saya Farid dari ActivityCRM. Ingin menindaklanjuti kebutuhan ${p.products||'produk kami'} untuk ${p.name}. Apakah ada waktu untuk diskusi lanjutan? Terima kasih.`},
+ {label:'Follow-up Proposal',text:(p)=>`Halo ${p.pic||''}, ingin memastikan proposal yang kami kirimkan untuk ${p.name} sudah diterima dengan baik. Apakah ada yang perlu didiskusikan lagi?`},
+ {label:'Reminder Meeting',text:(p)=>`Halo ${p.pic||''}, mengingatkan jadwal pertemuan kita terkait ${p.name}. Mohon konfirmasi apakah jadwal masih sesuai. Terima kasih.`},
+ {label:'Ucapan Terima Kasih Deal',text:(p)=>`Halo ${p.pic||''}, terima kasih atas kepercayaannya bekerja sama dengan kami untuk ${p.name}. Kami siap bantu jika ada kebutuhan tambahan.`}
+];
+function openWaTemplates(){
+ const p=getProspect(currentProspect);
+ openModal(`<div class="modal-title">Template Follow-up WhatsApp</div><div style="font-size:12px;font-weight:600;color:#8A9B98;margin-top:-7px;margin-bottom:14px">${p.name} · ${p.phone||'nomor belum diisi'}</div>${WA_TEMPLATES.map((t,i)=>`<button class="cta-main ghost" style="margin-bottom:8px;text-align:left" onclick="sendWa('${p.id}',${i})"><i class="ti ti-brand-whatsapp" style="color:#25D366"></i> ${t.label}</button>`).join('')}`);
+}
+function sendWa(id,i){
+ const p=getProspect(id);const msg=WA_TEMPLATES[i].text(p);
+ if(!p.phone){showToast('Nomor WhatsApp PIC belum diisi.');closeModal();return}
+ window.open(`https://wa.me/${p.phone}?text=${encodeURIComponent(msg)}`,'_blank');
+ p.lastContactDate=todayISO();save();closeModal();showToast('Membuka WhatsApp...');
+}
+function renderFollowup(){
+ const t=todayISO();
+ const todayList=DB.prospects.filter(p=>p.nextFollowupDate===t&&!['lost'].includes(p.stage));
+ const overdueList=DB.prospects.filter(p=>p.nextFollowupDate&&p.nextFollowupDate<t&&!['lost','deal','repeat'].includes(p.stage));
+ const coldList=DB.prospects.filter(p=>dayDiff(p.lastContactDate||t)>14&&!['lost','deal'].includes(p.stage));
+ const hotList=[...DB.prospects].filter(p=>['proposal','negotiation'].includes(p.stage)).sort((a,b)=>b.potentialValue-a.potentialValue).slice(0,5);
+ document.getElementById('fu-today').textContent=todayList.length;
+ document.getElementById('fu-overdue').textContent=overdueList.length;
+ document.getElementById('fu-cold').textContent=coldList.length;
+ document.getElementById('fu-hot').textContent=hotList.length;
+ const rowFn=(p,tagColor,tagText)=>`<div class="agenda-item" onclick="openProspectDetail('${p.id}')"><div class="item-icon prospect"><i class="ti ti-building-store"></i></div><div class="item-meta"><div class="item-title">${p.name}</div><div class="item-sub">${nextAction(p)}</div></div><span class="tag ${tagColor}" style="margin:0">${tagText}</span></div>`;
+ document.getElementById('fu-priority-list').innerHTML=todayList.length?todayList.map(p=>rowFn(p,'yellow',stageLabel(p.stage))).join(''):'<div class="empty"><i class="ti ti-calendar-check"></i><p>Tidak ada follow-up hari ini.</p></div>';
+ document.getElementById('fu-overdue-list').innerHTML=overdueList.length?overdueList.map(p=>rowFn(p,'red',dayDiff(p.nextFollowupDate)+' hari lewat')).join(''):'<div class="empty"><i class="ti ti-circle-check"></i><p>Tidak ada yang overdue. Mantap!</p></div>';
+ document.getElementById('fu-cold-list').innerHTML=coldList.length?coldList.map(p=>rowFn(p,'blue',dayDiff(p.lastContactDate)+' hari')).join(''):'<div class="empty"><i class="ti ti-snowflake-off"></i><p>Tidak ada customer dingin.</p></div>';
+ document.getElementById('fu-hot-list').innerHTML=hotList.length?hotList.map(p=>rowFn(p,'green',fmtShort(p.potentialValue))).join(''):'<div class="empty"><i class="ti ti-flame"></i><p>Belum ada peluang hot.</p></div>';
+}
+
+/* ===== TARGET / KPI / GAMIFIKASI (Iterasi 4) ===== */
+function currentLevel(){const pts=DB.points||0;let cur=LEVELS[0],next=LEVELS[1];for(let i=0;i<LEVELS.length;i++){if(pts>=LEVELS[i].min){cur=LEVELS[i];next=LEVELS[i+1]||null}}return{cur,next}}
+function streakDays(){
+ let n=0,d=todayISO();
+ while(true){const has=DB.activities.some(a=>a.status==='done'&&(a.completedAt?new Date(a.completedAt).toISOString().slice(0,10):a.date)===d);if(!has)break;n++;const dt=new Date(d);dt.setDate(dt.getDate()-1);d=dt.toISOString().slice(0,10);if(n>60)break}
+ return n;
+}
+function countThisMonth(type){const m=new Date().toISOString().slice(0,7);return DB.activities.filter(a=>a.type===type&&a.status==='done'&&a.date.slice(0,7)===m).length}
+function renderTarget(){
+ const pts=DB.points||0,{cur,next}=currentLevel();
+ document.getElementById('lv-name').textContent=cur.name;
+ const pctLvl=next?Math.round((pts-cur.min)/(next.min-cur.min)*100):100;
+ document.getElementById('lv-bar').style.width=pctLvl+'%';
+ document.getElementById('lv-sub').textContent=next?`${pts} poin · butuh ${next.min-pts} poin lagi ke ${next.name}`:`${pts} poin · level tertinggi tercapai`;
+
+ const tg=DB.profile.target||{visit:60,followup:120,proposal:20,deal:10,omzet:300000000};
+ const visitDone=countThisMonth('visit'),followDone=countThisMonth('followup'),propDone=countThisMonth('proposal'),dealDone=DB.prospects.filter(p=>p.stage==='deal'||p.stage==='repeat').length;
+ const omzet=DB.prospects.filter(p=>p.stage==='deal'||p.stage==='repeat').reduce((s,p)=>s+p.potentialValue,0);
+ const pipelineVal=DB.prospects.filter(p=>!['lost','deal','repeat'].includes(p.stage)).reduce((s,p)=>s+p.potentialValue,0);
+ const convBase=DB.prospects.length||1, convRate=Math.round(dealDone/convBase*100);
+ const gaugeRow=(label,val,max,color)=>`<div class="gauge-row"><span>${label}</span><span>${val} / ${max}</span></div><div class="progress"><div style="width:${Math.min(100,val/max*100)}%;background:${color}"></div></div>`;
+ document.getElementById('target-gauges').innerHTML=`${gaugeRow('Visit',visitDone,tg.visit,'var(--blue)')}${gaugeRow('Follow-up',followDone,tg.followup,'var(--yellow)')}${gaugeRow('Proposal',propDone,tg.proposal,'var(--orange)')}${gaugeRow('Deal',dealDone,tg.deal,'var(--green)')}<div class="gauge-row"><span>Omzet Closing</span><span>${fmtShort(omzet)} / ${fmtShort(tg.omzet)}</span></div><div class="progress"><div style="width:${Math.min(100,omzet/tg.omzet*100)}%;background:var(--c)"></div></div><div class="gauge-row"><span>Nilai Pipeline Aktif</span><span>${fmtShort(pipelineVal)}</span></div><div class="gauge-row"><span>Conversion Rate</span><span>${convRate}%</span></div>`;
+
+ const tVisit=DB.activities.filter(a=>a.type==='visit'&&a.status==='done'&&a.date===todayISO()).length;
+ const tFollow=DB.activities.filter(a=>a.type==='followup'&&a.status==='done'&&a.date===todayISO()).length;
+ const tProp=DB.activities.filter(a=>a.type==='proposal'&&a.status==='done'&&a.date===todayISO()).length;
+ const tDeal=DB.activities.filter(a=>a.type==='deal'&&a.status==='done'&&a.date===todayISO()).length;
+ document.getElementById('kpi-daily').innerHTML=`<div class="stat-card"><div class="stat-val" style="color:var(--blue)">${tVisit}</div><div class="stat-label">Visit +${POINTS.visit}p</div></div><div class="stat-card"><div class="stat-val" style="color:var(--yellow)">${tFollow}</div><div class="stat-label">Follow-up +${POINTS.followup}p</div></div><div class="stat-card"><div class="stat-val" style="color:var(--orange)">${tProp}</div><div class="stat-label">Proposal +${POINTS.proposal}p</div></div><div class="stat-card"><div class="stat-val" style="color:var(--green)">${tDeal}</div><div class="stat-label">Deal +${POINTS.deal}p</div></div>`;
+
+ const cal=[];for(let i=6;i>=0;i--){const iso=days(-i);const dt=new Date(iso+'T00:00:00');const doneCount=DB.activities.filter(a=>a.status==='done'&&(a.completedAt?new Date(a.completedAt).toISOString().slice(0,10):a.date)===iso).length;const target=Math.max(1,Math.round(tg.visit/26));let cls='';if(doneCount>=target)cls='best';else if(doneCount>0)cls='on';cal.push(`<div class="cday ${cls}"><small>${dt.toLocaleDateString('id-ID',{weekday:'short'}).slice(0,3)}</small>${dt.getDate()}</div>`)}
+ document.getElementById('prod-calendar').innerHTML=cal.join('');
+
+ const streak=streakDays();
+ const badges=[
+  {name:'Streak 3 Hari',desc:'Aktif menyelesaikan aktivitas 3 hari beruntun.',unlocked:streak>=3},
+  {name:'Streak 7 Hari',desc:'Aktif menyelesaikan aktivitas 7 hari beruntun.',unlocked:streak>=7},
+  {name:'Visit Konsisten',desc:'5 kunjungan selesai bulan ini.',unlocked:visitDone>=5},
+  {name:'Proposal Sprint',desc:'3 proposal terkirim bulan ini.',unlocked:propDone>=3},
+  {name:'Deal Maker',desc:'1 deal closing tercapai.',unlocked:dealDone>=1},
+  {name:'Repeat Champion',desc:'Berhasil mendapat repeat order pertama.',unlocked:DB.prospects.some(p=>p.stage==='repeat')}
+ ];
+ document.getElementById('badge-list').innerHTML=badges.map(b=>`<div class="badge-box ${b.unlocked?'unlocked':''}"><b><i class="ti ${b.unlocked?'ti-medal':'ti-lock'}"></i> ${b.name}</b><small>${b.desc}</small></div>`).join('');
+
+ document.getElementById('leaderboard').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #EAF2F0"><span style="font-size:13px;font-weight:800">🏆 ${DB.profile.name}</span><span style="font-size:12px;font-weight:900;color:var(--c)">${pts} poin · Streak ${streak}d</span></div><div style="font-size:11px;font-weight:600;color:#8A9B98;padding-top:8px;line-height:1.6">Fokus minggu ini bukan membandingkan dengan orang lain, tetapi menjaga ritme aktivitas harian agar pipeline terus bergerak menuju target bulanan.</div>`;
+}
+
+/* ===== REPORT ===== */
+function renderReport(){
+ const start=new Date();start.setDate(new Date().getDate()-6);let counts=[],labels=[];
+ for(let i=0;i<7;i++){const d=new Date(start);d.setDate(start.getDate()+i);const iso=d.toISOString().slice(0,10);counts.push(DB.activities.filter(a=>a.date===iso).length);labels.push(d.toLocaleDateString('id-ID',{weekday:'narrow'}))}
+ document.getElementById('bar-chart').innerHTML=counts.map((n,i)=>`<div class="bar-col"><div class="bar" style="height:${Math.max(8,Math.min(100,n*25))}%"></div><div class="bar-label">${labels[i]}</div></div>`).join('');
+ document.getElementById('report-visits').textContent=DB.activities.filter(a=>a.type==='visit').length;
+ document.getElementById('report-follow').textContent=DB.activities.filter(a=>a.type==='followup').length;
+ document.getElementById('report-deals').textContent=DB.prospects.filter(p=>p.stage==='deal'||p.stage==='repeat').length;
+ const total=DB.prospects.length||1,hot=DB.prospects.filter(p=>['qualified','meeting','proposal','negotiation','deal','repeat'].includes(p.stage)).length,deals=DB.prospects.filter(p=>p.stage==='deal'||p.stage==='repeat').length;
+ document.getElementById('conversion-list').innerHTML=`<div style="font-size:13px;font-weight:800">Prospek aktif <span style="float:right;color:var(--c)">${hot}/${total}</span></div><div class="progress"><div style="width:${hot/total*100}%"></div></div><div style="font-size:13px;font-weight:800;margin-top:15px">Deal tercapai <span style="float:right;color:var(--green)">${deals}/${total}</span></div><div class="progress"><div style="width:${deals/total*100}%;background:var(--green)"></div></div>`;
+ const done=DB.activities.filter(a=>a.status==='done').length,planned=DB.activities.filter(a=>a.status==='plan').length;
+ document.getElementById('weekly-summary').innerHTML=`<div style="font-size:14px;font-weight:900">${done} aktivitas telah selesai</div><div style="font-size:12px;font-weight:600;line-height:1.6;color:#637774;margin-top:6px">Masih ada <b style="color:var(--yellow)">${planned} agenda</b> yang perlu ditindaklanjuti. Fokus pada prospek hot dan proposal agar pipeline bergerak ke deal.</div>`;
+}
+
+/* ===== PROFILE ===== */
+function renderProfile(){document.getElementById('profile-name').textContent=DB.profile.name}
+function openProfileEdit(){openModal(`<div class="modal-title">Edit Profil</div><div class="form-card"><div class="form-label">Nama</div><input id="profile-name-input" value="${DB.profile.name}"></div><button class="cta-main" onclick="saveProfile()">Simpan</button>`)}
+function saveProfile(){DB.profile.name=document.getElementById('profile-name-input').value.trim()||'Farid Adam';save();closeModal();renderProfile();renderHome();showToast('Profil diperbarui.')}
+function openTargetSetting(){
+ const t=DB.profile.target;
+ openModal(`<div class="modal-title">Target Bulanan</div><div class="form-card"><div class="form-label">Visit</div><input type="number" id="tg-visit" value="${t.visit}"><div class="form-divider"></div><div class="form-label">Follow-up</div><input type="number" id="tg-followup" value="${t.followup}"><div class="form-divider"></div><div class="form-label">Proposal</div><input type="number" id="tg-proposal" value="${t.proposal}"></div><div class="form-card"><div class="form-label">Deal</div><input type="number" id="tg-deal" value="${t.deal}"><div class="form-divider"></div><div class="form-label">Omzet Closing (Rp)</div><input type="number" id="tg-omzet" value="${t.omzet}"></div><button class="cta-main" onclick="saveTarget()">Simpan Target</button>`);
+}
+function saveTarget(){
+ DB.profile.target={visit:Number(document.getElementById('tg-visit').value||60),followup:Number(document.getElementById('tg-followup').value||120),proposal:Number(document.getElementById('tg-proposal').value||20),deal:Number(document.getElementById('tg-deal').value||10),omzet:Number(document.getElementById('tg-omzet').value||300000000)};
+ save();closeModal();renderHome();showToast('Target bulanan diperbarui.');
+}
+function exportSummary(){
+ const {cur}=currentLevel();
+ const text=`ActivityCRM\nPoin: ${DB.points||0} (${cur.name})\nAktivitas: ${DB.activities.length}\nProspek: ${DB.prospects.length}\nPipeline aktif: ${fmt(DB.prospects.filter(p=>!['lost','deal','repeat'].includes(p.stage)).reduce((s,p)=>s+p.potentialValue,0))}`;
+ navigator.clipboard&&navigator.clipboard.writeText(text);showToast('Ringkasan disalin ke clipboard.');
+}
+function resetDemo(){if(!confirm('Reset seluruh data CRM ke data demo?'))return;DB=seed();save();renderProfile();renderHome();showToast('Data demo berhasil direset.')}
+
+/* ===== MODAL / TOAST ===== */
+function openModal(html){document.getElementById('modal-content').innerHTML=html;document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+let toastTimer;function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
+
 renderHome();
 </script>
 </body>
