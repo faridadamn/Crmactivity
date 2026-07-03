@@ -527,7 +527,8 @@ function exportSummary(){
  const text=`ActivityCRM\nPoin: ${DB.points||0} (${cur.name})\nAktivitas: ${DB.activities.length}\nProspek: ${DB.prospects.length}\nPipeline aktif: ${fmt(DB.prospects.filter(p=>!['lost','deal','repeat'].includes(p.stage)).reduce((s,p)=>s+p.potentialValue,0))}`;
  navigator.clipboard&&navigator.clipboard.writeText(text);showToast('Ringkasan disalin ke clipboard.');
 }
-function resetDemo(){if(!confirm('Reset seluruh data CRM ke data demo?'))return;DB=seed();save();renderProfile();renderHome();showToast('Data demo berhasil direset.')}
+function resetDemo(){openModal(`<div class="modal-title">Reset Data Demo</div><div style="font-size:13px;font-weight:600;color:#5D7270;line-height:1.6;margin-bottom:16px">Semua aktivitas, prospek, poin, dan progress yang sudah kamu ubah akan dihapus dan dikembalikan ke data demo awal. Lanjutkan?</div><button class="cta-main danger" onclick="confirmResetDemo()"><i class="ti ti-refresh"></i> Ya, Reset Sekarang</button><button class="cta-main ghost" style="margin-top:8px" onclick="closeModal()">Batal</button>`)}
+function confirmResetDemo(){DB=seed();save();closeModal();const cur=document.querySelector('.page.on');if(cur)renderPage(cur.id);showToast('Data demo berhasil direset.')}
 
 /* ===== MODAL / TOAST ===== */
 function openModal(html){document.getElementById('modal-content').innerHTML=html;document.getElementById('modal').classList.add('show')}
